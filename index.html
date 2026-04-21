@@ -116,7 +116,7 @@
   }
   .crest-house {
     font-family: 'Cinzel', serif;
-    font-size: 9px; letter-spacing: 10px;
+    font-size: 11px; letter-spacing: 10px;
     color: var(--bronze-dim); text-transform: uppercase;
     margin-bottom: 10px;
   }
@@ -128,7 +128,7 @@
   @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
   .crest-motto {
     font-family: 'Cinzel', serif; font-style: italic;
-    font-size: 9px; letter-spacing: 3px;
+    font-size: 11px; letter-spacing: 3px;
     color: var(--blue-light); margin-bottom: 0;
   }
 
@@ -142,12 +142,12 @@
   }
 
   .header-names {
-    font-family: 'Cinzel', serif; font-size: 12px;
+    font-family: 'Cinzel', serif; font-size: 14px;
     color: var(--blue-glow); letter-spacing: 6px; margin-bottom: 6px;
     text-shadow: 0 0 24px rgba(122,176,248,0.5);
   }
   .header-sub {
-    font-size: 11px; color: var(--text-dim);
+    font-size: 13px; color: var(--text-dim);
     letter-spacing: 3px; font-style: italic; margin-bottom: 20px;
   }
 
@@ -164,7 +164,7 @@
     background: transparent;
     border: 1px solid var(--border-blue);
     color: var(--text-dim);
-    font-family: 'Cinzel', serif; font-size: 10px;
+    font-family: 'Cinzel', serif; font-size: 12px;
     letter-spacing: 2px; cursor: pointer;
     transition: all 0.3s; text-transform: uppercase;
     position: relative; overflow: hidden;
@@ -193,24 +193,24 @@
     width: 100%; background: var(--bg-card);
     border: 1px solid var(--border-blue); color: var(--text);
     padding: 10px 16px 10px 36px;
-    font-family: 'Lora', serif; font-size: 13px;
+    font-family: 'Lora', serif; font-size: 15px;
     outline: none; transition: all 0.3s;
   }
   .search-box input:focus { border-color: var(--blue-light); box-shadow: 0 0 14px rgba(74,127,212,0.12); }
   .search-box input::placeholder { color: var(--text-dim); }
-  .search-icon { position: absolute; left: 11px; top: 50%; transform: translateY(-50%); color: var(--text-dim); font-size: 13px; }
+  .search-icon { position: absolute; left: 11px; top: 50%; transform: translateY(-50%); color: var(--text-dim); font-size: 15px; }
 
   .btn {
     padding: 9px 16px;
     border: 1px solid var(--border-bright);
     background: linear-gradient(135deg, rgba(180,115,51,0.18), rgba(180,115,51,0.04));
     color: var(--bronze-bright);
-    font-family: 'Cinzel', serif; font-size: 9px;
+    font-family: 'Cinzel', serif; font-size: 11px;
     letter-spacing: 2px; cursor: pointer;
     transition: all 0.3s; text-transform: uppercase; white-space: nowrap;
   }
   .btn:hover { box-shadow: 0 0 20px rgba(180,115,51,0.18); background: linear-gradient(135deg, rgba(180,115,51,0.28), rgba(180,115,51,0.08)); }
-  .btn-sm { padding: 6px 12px; font-size: 9px; }
+  .btn-sm { padding: 6px 12px; font-size: 11px; }
   .btn-blue {
     border-color: var(--border-blue);
     background: linear-gradient(135deg, rgba(26,58,107,0.3), rgba(26,58,107,0.08));
@@ -247,7 +247,7 @@
   .category-header:hover { background: linear-gradient(135deg, rgba(20,32,58,0.9), rgba(20,32,58,0.3)); }
 
   .category-icon { font-size: 15px; }
-  .category-title { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; flex: 1; }
+  .category-title { font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 3px; text-transform: uppercase; flex: 1; }
   [data-color="gold"] .category-title { color: var(--bronze-bright); }
   [data-color="blue"] .category-title { color: var(--blue-glow); }
   [data-color="teal"] .category-title { color: var(--teal-light); }
@@ -257,12 +257,12 @@
   [data-color="cream"] .category-title { color: var(--cream); }
 
   .category-count {
-    font-size: 10px; color: var(--text-dim);
+    font-size: 12px; color: var(--text-dim);
     background: rgba(255,255,255,0.03);
     padding: 2px 8px; border: 1px solid var(--border);
     font-family: 'Cinzel', serif;
   }
-  .category-toggle { color: var(--text-dim); font-size: 10px; transition: transform 0.3s; }
+  .category-toggle { color: var(--text-dim); font-size: 12px; transition: transform 0.3s; }
   .category-toggle.collapsed { transform: rotate(-90deg); }
   .category-body { padding: 12px; }
   .category-body.hidden { display: none; }
@@ -279,7 +279,7 @@
   .item.dragging { opacity: 0.35; border-color: var(--bronze-dim); border-style: dashed; }
   .item.drag-over { border-color: var(--bronze-light); background: rgba(180,115,51,0.05); }
 
-  .item-drag { color: var(--text-dim); font-size: 11px; padding-top: 3px; cursor: grab; flex-shrink: 0; opacity: 0.4; transition: opacity 0.2s; }
+  .item-drag { color: var(--text-dim); font-size: 13px; padding-top: 3px; cursor: grab; flex-shrink: 0; opacity: 0.4; transition: opacity 0.2s; }
   .item:hover .item-drag { opacity: 1; }
 
   /* Ravenclaw diamond checkbox */
@@ -295,16 +295,16 @@
   .item-check:checked::after {
     content: '✦'; position: absolute;
     top: -5px; left: -2px;
-    font-size: 14px; color: var(--bronze-bright);
+    font-size: 16px; color: var(--bronze-bright);
     transform: rotate(-45deg);
   }
 
   .item-content { flex: 1; min-width: 0; }
-  .item-name { font-size: 14px; color: var(--text); margin-bottom: 3px; line-height: 1.4; }
+  .item-name { font-size: 16px; color: var(--text); margin-bottom: 3px; line-height: 1.4; }
   .item-name.done { text-decoration: line-through; color: var(--text-dim); }
   .item-meta { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
-  .item-note { font-size: 11px; color: var(--silver-dim); font-style: italic; }
-  .item-link { font-size: 10px; color: var(--teal-light); text-decoration: none; border-bottom: 1px solid rgba(74,184,204,0.3); letter-spacing: 0.5px; transition: all 0.2s; }
+  .item-note { font-size: 13px; color: var(--silver-dim); font-style: italic; }
+  .item-link { font-size: 12px; color: var(--teal-light); text-decoration: none; border-bottom: 1px solid rgba(74,184,204,0.3); letter-spacing: 0.5px; transition: all 0.2s; }
   .item-link:hover { color: var(--blue-glow); border-color: var(--blue-glow); }
   .item-link.cal { color: var(--purple-light); border-color: rgba(138,106,200,0.3); }
 
@@ -313,16 +313,43 @@
   .item-btn {
     background: transparent; border: 1px solid var(--border);
     color: var(--text-dim); width: 24px; height: 24px;
-    cursor: pointer; font-size: 11px; transition: all 0.2s;
+    cursor: pointer; font-size: 13px; transition: all 0.2s;
     display: flex; align-items: center; justify-content: center;
   }
   .item-btn:hover { border-color: var(--bronze-light); color: var(--bronze-bright); }
   .item-btn.del:hover { border-color: var(--rose-light); color: var(--rose-light); }
 
-  .empty-state {
+  .item-date { font-size: 12px; color: var(--bronze-light); letter-spacing: 0.5px; }
+  .item-priority { font-size: 12px; letter-spacing: 0.5px; }
+  input[type="date"] { color-scheme: dark; }
+
+  /* Priority picker */
+  .priority-picker { display: flex; gap: 8px; flex-wrap: wrap; }
+  .priority-opt {
+    padding: 6px 12px; border: 1px solid var(--border); background: var(--bg-card);
+    color: var(--text-dim); font-size: 12px; cursor: pointer; transition: all 0.2s;
+    font-family: 'Lora', serif;
+  }
+  .priority-opt:hover { border-color: var(--border-bright); }
+  .priority-opt.selected { border-color: var(--bronze-bright); color: var(--text); background: var(--bg-hover); }
+  .priority-opt.urgent.selected { border-color: #cc4444; }
+  .priority-opt.normal.selected { border-color: var(--blue-light); }
+  .priority-opt.low.selected { border-color: var(--green-light); }
+
+  /* Scroll-in animation */
+  @keyframes scrollIn {
+    from { opacity: 0; transform: translateY(10px) scaleY(0.95); }
+    to { opacity: 1; transform: translateY(0) scaleY(1); }
+  }
+
+  /* Sparkle animation */
+  @keyframes sparkle {
+    0% { opacity: 1; transform: translate(0,0) scale(1); }
+    100% { opacity: 0; transform: translate(var(--tx),var(--ty)) scale(0); }
+  }
     text-align: center; padding: 26px;
     color: var(--text-dim); font-style: italic;
-    font-size: 12px; letter-spacing: 1px;
+    font-size: 14px; letter-spacing: 1px;
     border: 1px dashed rgba(180,115,51,0.12);
   }
 
@@ -330,26 +357,26 @@
   .memoir-page { display: none; }
   .memoir-page.active { display: block; }
   .memoir-header { text-align: center; padding: 24px 0 26px; margin-bottom: 18px; }
-  .memoir-orn { color: rgba(138,106,200,0.35); font-size: 12px; letter-spacing: 6px; margin: 8px 0; }
+  .memoir-orn { color: rgba(138,106,200,0.35); font-size: 14px; letter-spacing: 6px; margin: 8px 0; }
   .memoir-title {
     font-family: 'Cinzel Decorative', serif; font-size: 20px;
     background: linear-gradient(135deg, var(--purple-light), #c8a8f8, var(--purple-light));
     -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     letter-spacing: 3px;
   }
-  .memoir-sub { font-size: 11px; color: var(--text-dim); letter-spacing: 2px; font-style: italic; }
+  .memoir-sub { font-size: 13px; color: var(--text-dim); letter-spacing: 2px; font-style: italic; }
   .memoir-item {
     display: flex; align-items: center; gap: 12px;
     padding: 10px 14px; border: 1px solid rgba(138,106,200,0.1);
     background: rgba(74,42,122,0.04); margin-bottom: 5px; transition: all 0.2s;
   }
   .memoir-item:hover { background: rgba(74,42,122,0.1); border-color: rgba(138,106,200,0.22); }
-  .memoir-check { color: var(--purple-light); font-size: 12px; }
-  .memoir-name { flex: 1; font-size: 13px; color: var(--cream-dim); text-decoration: line-through; }
-  .memoir-cat { font-size: 9px; color: var(--purple-light); opacity: 0.55; letter-spacing: 1px; font-family: 'Cinzel', serif; }
+  .memoir-check { color: var(--purple-light); font-size: 14px; }
+  .memoir-name { flex: 1; font-size: 15px; color: var(--cream-dim); text-decoration: line-through; }
+  .memoir-cat { font-size: 11px; color: var(--purple-light); opacity: 0.55; letter-spacing: 1px; font-family: 'Cinzel', serif; }
   .memoir-restore {
     background: transparent; border: 1px solid rgba(138,106,200,0.28);
-    color: var(--purple-light); font-size: 9px; padding: 3px 8px;
+    color: var(--purple-light); font-size: 11px; padding: 3px 8px;
     cursor: pointer; font-family: 'Cinzel', serif; letter-spacing: 1px; transition: all 0.2s;
   }
   .memoir-restore:hover { background: rgba(74,42,122,0.22); }
@@ -371,19 +398,19 @@
     background: linear-gradient(90deg, transparent, var(--blue-mid), var(--bronze-light), var(--blue-mid), transparent);
   }
   .modal-eagle { text-align: center; font-size: 22px; margin-bottom: 6px; filter: drop-shadow(0 0 10px rgba(74,127,212,0.6)); }
-  .modal h3 { font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: 3px; color: var(--bronze-bright); margin-bottom: 20px; text-transform: uppercase; text-align: center; }
+  .modal h3 { font-family: 'Cinzel', serif; font-size: 14px; letter-spacing: 3px; color: var(--bronze-bright); margin-bottom: 20px; text-transform: uppercase; text-align: center; }
   .modal-field { margin-bottom: 13px; }
-  .modal-field label { display: block; font-size: 9px; letter-spacing: 3px; color: var(--blue-glow); text-transform: uppercase; margin-bottom: 6px; font-family: 'Cinzel', serif; }
+  .modal-field label { display: block; font-size: 11px; letter-spacing: 3px; color: var(--blue-glow); text-transform: uppercase; margin-bottom: 6px; font-family: 'Cinzel', serif; }
   .modal-field input, .modal-field textarea, .modal-field select {
     width: 100%; background: var(--bg-card); border: 1px solid var(--border-blue);
     color: var(--text); padding: 10px 12px;
-    font-family: 'Lora', serif; font-size: 13px; outline: none; transition: all 0.3s; resize: vertical;
+    font-family: 'Lora', serif; font-size: 15px; outline: none; transition: all 0.3s; resize: vertical;
   }
   .modal-field input:focus, .modal-field textarea:focus, .modal-field select:focus { border-color: var(--blue-light); box-shadow: 0 0 12px rgba(74,127,212,0.12); }
   .modal-field input::placeholder, .modal-field textarea::placeholder { color: var(--text-dim); }
   .modal-field select option { background: var(--bg-card); }
   .modal-actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 20px; padding-top: 14px; border-top: 1px solid var(--border); }
-  .btn-close { padding: 9px 16px; background: transparent; border: 1px solid var(--border); color: var(--text-dim); font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 2px; cursor: pointer; transition: all 0.2s; text-transform: uppercase; }
+  .btn-close { padding: 9px 16px; background: transparent; border: 1px solid var(--border); color: var(--text-dim); font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 2px; cursor: pointer; transition: all 0.2s; text-transform: uppercase; }
   .btn-close:hover { border-color: var(--border-bright); color: var(--text); }
 
   .cat-icon-picker { display: flex; gap: 6px; flex-wrap: wrap; }
@@ -401,14 +428,14 @@
     position: relative; overflow: hidden;
   }
   .footer-bar::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--blue-mid), var(--bronze-dim), var(--blue-mid), transparent); }
-  .sync-status { display: flex; align-items: center; gap: 8px; font-size: 10px; color: var(--text-dim); letter-spacing: 1px; font-family: 'Cinzel', serif; }
+  .sync-status { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--text-dim); letter-spacing: 1px; font-family: 'Cinzel', serif; }
   .sync-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green-light); box-shadow: 0 0 6px var(--green-light); animation: pulse 2s infinite; }
   .sync-dot.offline { background: var(--rose-light); box-shadow: 0 0 6px var(--rose-light); animation: none; }
   @keyframes pulse { 0%,100%{opacity:1}50%{opacity:0.25} }
-  .footer-names { font-family: 'Cinzel', serif; font-size: 10px; color: var(--bronze-dim); letter-spacing: 3px; }
+  .footer-names { font-family: 'Cinzel', serif; font-size: 12px; color: var(--bronze-dim); letter-spacing: 3px; }
   .footer-names span { color: var(--blue-light); }
 
-  .loading { text-align: center; padding: 50px; color: var(--text-dim); font-style: italic; font-size: 12px; letter-spacing: 2px; }
+  .loading { text-align: center; padding: 50px; color: var(--text-dim); font-style: italic; font-size: 14px; letter-spacing: 2px; }
   .loading::before { content: '🦅'; display: block; font-size: 30px; margin-bottom: 14px; animation: float 2s ease-in-out infinite; }
 
   @media(max-width:600px){
@@ -493,6 +520,16 @@
     <div class="modal-field"><label>名稱 *</label><input type="text" id="itemName" placeholder="輸入名稱…"></div>
     <div class="modal-field"><label>備註</label><textarea id="itemNote" rows="2" placeholder="備註、說明…"></textarea></div>
     <div class="modal-field"><label>連結（Google 地圖 / 購物連結）</label><input type="url" id="itemLink" placeholder="https://…"></div>
+    <div class="modal-field">
+      <label>優先度</label>
+      <div class="priority-picker" id="priorityPicker">
+        <div class="priority-opt" data-val="" onclick="selectPriority('')">— 不設定</div>
+        <div class="priority-opt urgent" data-val="urgent" onclick="selectPriority('urgent')">🧪 緊急</div>
+        <div class="priority-opt normal" data-val="normal" onclick="selectPriority('normal')">🔵 普通</div>
+        <div class="priority-opt low" data-val="low" onclick="selectPriority('low')">🟢 輕鬆</div>
+      </div>
+    </div>
+    <div class="modal-field"><label>日期</label><input type="date" id="itemDate"></div>
     <div class="modal-field"><label>Google 日曆連結</label><input type="url" id="itemCalendar" placeholder="https://calendar.google.com/…"></div>
     <div class="modal-actions">
       <button class="btn-close" onclick="closeItemModal()">取消</button>
@@ -548,7 +585,7 @@ const db = getDatabase(app);
 // State
 let categories={}, items={}, activeTab=null, showMemoir=false;
 let editingItemId=null, currentCatId=null, dragSrcId=null;
-let selectedIcon='✨', selectedColor='gold', searchQuery='';
+let selectedIcon='✨', selectedColor='gold', searchQuery='', selectedPriority='';
 
 const ICONS=['🍜','🍱','🍣','🍕','☕','🍰','🍷','🎬','🏔️','🌊','🌸','🛍️','💎','🎁','✈️','🏠','🎮','📚','🎵','💐','⭐','✨','🔮','🗺️','🕯️','🪄','🦅','📖','🌙','🏺','🎪','🌃'];
 const COLORS=['gold','blue','teal','rose','purple','green','cream'];
@@ -591,8 +628,11 @@ function renderTabs(){
 }
 
 function renderCategories(){
-  document.getElementById('mainPage').style.display='';
+  // Fix: properly show/hide pages
+  document.getElementById('mainPage').style.display='block';
+  document.getElementById('memoirPage').style.display='none';
   document.getElementById('memoirPage').classList.remove('active');
+
   const container=document.getElementById('categoriesContainer');
   const q=searchQuery.toLowerCase();
   const cats=activeTab?[[activeTab,categories[activeTab]]]:sortedCats();
@@ -617,6 +657,11 @@ function renderCategories(){
     </div>`;
   }).join('');
 
+  // Animate new items in
+  document.querySelectorAll('.item').forEach((el,i)=>{
+    el.style.animation=`scrollIn 0.3s ease ${i*0.04}s both`;
+  });
+
   document.querySelectorAll('.item').forEach(el=>{
     el.addEventListener('dragstart',()=>{dragSrcId=el.dataset.iid;el.classList.add('dragging');});
     el.addEventListener('dragend',()=>{el.classList.remove('dragging');document.querySelectorAll('.item').forEach(i=>i.classList.remove('drag-over'));});
@@ -626,18 +671,23 @@ function renderCategories(){
   });
 }
 
+const PRIORITY={urgent:{icon:'🧪',label:'緊急',color:'#cc4444'},normal:{icon:'🔵',label:'普通',color:'#4a7fd4'},low:{icon:'🟢',label:'輕鬆',color:'#5ab870'}};
+
 function itemHtml(iid,item){
   const isMap=item.link&&(item.link.includes('maps')||item.link.includes('goo.gl'));
   const lbl=isMap?'📍 地圖':'🔗 連結';
   const lh=item.link?`<a class="item-link" href="${item.link}" target="_blank">${lbl}</a>`:'';
   const ch=item.calendar?`<a class="item-link cal" href="${item.calendar}" target="_blank">📅 日曆</a>`:'';
   const nh=item.note?`<span class="item-note">${item.note}</span>`:'';
+  const dh=item.date?`<span class="item-date">🗓 ${item.date}</span>`:'';
+  const p=item.priority&&PRIORITY[item.priority];
+  const ph=p?`<span class="item-priority" style="color:${p.color}">${p.icon} ${p.label}</span>`:'';
   return `<div class="item" draggable="true" data-iid="${iid}">
     <span class="item-drag">⠿</span>
-    <input type="checkbox" class="item-check" ${item.done?'checked':''} onchange="toggleDone('${iid}',this.checked)">
+    <input type="checkbox" class="item-check" ${item.done?'checked':''} onchange="toggleDone('${iid}',this.checked,this)">
     <div class="item-content">
       <div class="item-name ${item.done?'done':''}">${item.name}</div>
-      <div class="item-meta">${nh}${lh}${ch}</div>
+      <div class="item-meta">${ph}${nh}${dh}${lh}${ch}</div>
     </div>
     <div class="item-actions">
       <button class="item-btn" onclick="openEditItem('${iid}')" title="編輯">✎</button>
@@ -647,7 +697,11 @@ function itemHtml(iid,item){
 }
 
 function renderMemoir(){
+  // Fix: properly show/hide pages
+  document.getElementById('mainPage').style.display='none';
+  document.getElementById('memoirPage').style.display='block';
   document.getElementById('memoirPage').classList.add('active');
+
   const done=Object.entries(items).filter(([,i])=>i.done).sort((a,b)=>(b[1].doneAt||0)-(a[1].doneAt||0));
   const container=document.getElementById('memoirContainer');
   if(!done.length){container.innerHTML='<div class="empty-state">回憶錄還是空的 ✦ 勾選完成的項目會出現在這裡</div>';return;}
@@ -655,9 +709,10 @@ function renderMemoir(){
     const cat=categories[item.catId];
     const cn=cat?`${cat.icon} ${cat.name}`:'';
     const lh=item.link?`<a class="item-link" href="${item.link}" target="_blank" style="margin-left:8px">連結</a>`:'';
-    return `<div class="memoir-item">
+    const dh=item.date?`<span style="font-size:12px;color:var(--bronze-dim);margin-left:8px">🗓 ${item.date}</span>`:'';
+    return `<div class="memoir-item" style="animation:scrollIn 0.4s ease both">
       <span class="memoir-check">✦</span>
-      <span class="memoir-name">${item.name}${lh}</span>
+      <span class="memoir-name">${item.name}${lh}${dh}</span>
       <span class="memoir-cat">${cn}</span>
       <button class="memoir-restore" onclick="restoreItem('${iid}')">還原</button>
       <button class="item-btn del" onclick="deleteItem('${iid}')" style="opacity:1">✕</button>
@@ -665,10 +720,26 @@ function renderMemoir(){
   }).join('');
 }
 
+// Magic sparkle on check
+function spawnSparkles(el){
+  const rect=el.getBoundingClientRect();
+  const cx=rect.left+rect.width/2, cy=rect.top+rect.height/2;
+  ['✦','✧','⭒','★','✦'].forEach((ch,i)=>{
+    const s=document.createElement('div');
+    s.textContent=ch;
+    s.style.cssText=`position:fixed;left:${cx}px;top:${cy}px;pointer-events:none;z-index:9999;font-size:${12+Math.random()*8}px;color:${['#f0c870','#7ab0f8','#8a6ac8','#f0c870'][i%4]};animation:sparkle 0.7s ease forwards;--tx:${(Math.random()-0.5)*60}px;--ty:${(Math.random()-0.9)*50}px;`;
+    document.body.appendChild(s);
+    setTimeout(()=>s.remove(),750);
+  });
+}
+
 window.setTab=id=>{activeTab=id;showMemoir=false;renderAll();};
 window.toggleMemoir=()=>{showMemoir=!showMemoir;renderAll();};
 window.toggleCat=id=>update(ref(db,`categories/${id}`),{collapsed:!(categories[id]?.collapsed)});
-window.toggleDone=(iid,done)=>update(ref(db,`items/${iid}`),{done,doneAt:done?Date.now():null});
+window.toggleDone=(iid,done,el)=>{
+  if(done&&el) spawnSparkles(el);
+  update(ref(db,`items/${iid}`),{done,doneAt:done?Date.now():null});
+};
 window.restoreItem=iid=>update(ref(db,`items/${iid}`),{done:false,doneAt:null});
 window.deleteItem=iid=>{if(confirm('確定刪除？'))remove(ref(db,`items/${iid}`));};
 window.deleteCat=id=>{
@@ -684,10 +755,16 @@ window.swapOrder=(id1,id2)=>{
   update(ref(db,`items/${id2}`),{order:o1});
 };
 
+window.selectPriority=val=>{
+  selectedPriority=val;
+  document.querySelectorAll('.priority-opt').forEach(el=>el.classList.toggle('selected',el.dataset.val===val));
+};
+
 window.openAddItem=catId=>{
   editingItemId=null;currentCatId=catId;
   document.getElementById('itemModalTitle').textContent='新增項目';
-  ['itemName','itemNote','itemLink','itemCalendar'].forEach(id=>document.getElementById(id).value='');
+  ['itemName','itemNote','itemLink','itemCalendar','itemDate'].forEach(id=>document.getElementById(id).value='');
+  selectPriority('');
   document.getElementById('itemModal').classList.add('active');
   setTimeout(()=>document.getElementById('itemName').focus(),80);
 };
@@ -698,12 +775,14 @@ window.openEditItem=iid=>{
   document.getElementById('itemNote').value=item.note||'';
   document.getElementById('itemLink').value=item.link||'';
   document.getElementById('itemCalendar').value=item.calendar||'';
+  document.getElementById('itemDate').value=item.date||'';
+  selectPriority(item.priority||'');
   document.getElementById('itemModal').classList.add('active');
 };
 window.closeItemModal=()=>document.getElementById('itemModal').classList.remove('active');
 window.saveItem=()=>{
   const name=document.getElementById('itemName').value.trim();if(!name)return;
-  const data={name,note:document.getElementById('itemNote').value.trim(),link:document.getElementById('itemLink').value.trim(),calendar:document.getElementById('itemCalendar').value.trim(),catId:currentCatId,done:false,order:Date.now()};
+  const data={name,note:document.getElementById('itemNote').value.trim(),link:document.getElementById('itemLink').value.trim(),calendar:document.getElementById('itemCalendar').value.trim(),date:document.getElementById('itemDate').value,priority:selectedPriority,catId:currentCatId,done:false,order:Date.now()};
   editingItemId?update(ref(db,`items/${editingItemId}`),data):push(ref(db,'items'),data);
   closeItemModal();
 };
