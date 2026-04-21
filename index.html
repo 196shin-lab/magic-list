@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>✦ Koiyume & Shin696 ✦</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Noto+Serif+TC:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-deep: #060a14;
+    --bg-card: #0b1020;
+    --bg-panel: #101828;
+    --bg-hover: #14203a;
+    --blue: #1a3a6b;
+    --blue-mid: #2a5298;
+    --blue-light: #4a7fd4;
+    --blue-glow: #7ab0f8;
+    --bronze: #b87333;
+    --bronze-light: #d4a55a;
+    --bronze-bright: #f0c870;
+    --bronze-dim: #7a5020;
+    --cream: #f0e6cc;
+    --cream-dim: #a89870;
+    --silver: #c0d0e8;
+    --silver-dim: #5a6a80;
+    --purple: #4a2a7a;
+    --purple-light: #8a6ac8;
+    --teal: #1a5a6a;
+    --teal-light: #4ab8cc;
+    --rose: #6a2a3a;
+    --rose-light: #cc5570;
+    --green: #1a4a2a;
+    --green-light: #5ab870;
+    --border: rgba(180,130,60,0.18);
+    --border-bright: rgba(180,130,60,0.45);
+    --border-blue: rgba(74,127,212,0.25);
+    --text: #d8e8f8;
+    --text-dim: #5a6a80;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg-deep);
+    color: var(--text);
+    font-family: 'Lora', 'Noto Serif TC', serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── Starfield ── */
+  #starfield {
+    position: fixed; inset: 0;
+    pointer-events: none; z-index: 0; overflow: hidden;
+  }
+  #starfield::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse at 10% 10%, rgba(26,58,107,0.55) 0%, transparent 45%),
+      radial-gradient(ellipse at 90% 85%, rgba(26,58,107,0.35) 0%, transparent 40%),
+      radial-gradient(ellipse at 50% 50%, rgba(184,115,51,0.04) 0%, transparent 60%);
+  }
+  .star {
+    position: absolute; background: #fff; border-radius: 50%;
+    animation: twinkle var(--dur,3s) ease-in-out infinite var(--delay,0s);
+  }
+  @keyframes twinkle {
+    0%,100%{opacity:var(--mn,.08);transform:scale(1)}
+    50%{opacity:var(--mx,.7);transform:scale(1.4)}
+  }
+
+  /* ── Eagle watermark ── */
+  .eagle-bg {
+    position: fixed; right: -60px; bottom: -40px;
+    font-size: 280px; opacity: 0.025;
+    pointer-events: none; z-index: 0;
+    filter: blur(2px);
+    user-select: none;
+  }
+
+  .app {
+    position: relative; z-index: 1;
+    max-width: 980px; margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    text-align: center;
+    padding: 48px 0 32px;
+  }
+
+  .ornament-row {
+    display: flex; align-items: center; justify-content: center;
+    gap: 0; margin-bottom: 0;
+  }
+  .orn-line {
+    flex: 1; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--bronze-dim), var(--bronze-light), var(--bronze-dim), transparent);
+  }
+  .orn-diamond {
+    width: 8px; height: 8px;
+    background: var(--bronze-light); transform: rotate(45deg);
+    margin: 0 10px;
+    box-shadow: 0 0 10px rgba(212,165,90,0.6);
+  }
+  .orn-diamond-sm {
+    width: 4px; height: 4px;
+    background: var(--bronze-dim); transform: rotate(45deg);
+    margin: 0 6px;
+  }
+
+  .crest-wrap {
+    padding: 22px 0 16px;
+  }
+  .crest-house {
+    font-family: 'Cinzel', serif;
+    font-size: 9px; letter-spacing: 10px;
+    color: var(--bronze-dim); text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .eagle-icon {
+    font-size: 40px; display: block; margin-bottom: 6px;
+    filter: drop-shadow(0 0 16px rgba(74,127,212,0.7));
+    animation: float 4s ease-in-out infinite;
+  }
+  @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+  .crest-motto {
+    font-family: 'Cinzel', serif; font-style: italic;
+    font-size: 9px; letter-spacing: 3px;
+    color: var(--blue-light); margin-bottom: 0;
+  }
+
+  .header h1 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(15px, 3.2vw, 30px);
+    background: linear-gradient(135deg, var(--bronze-light) 0%, var(--bronze-bright) 50%, var(--bronze-light) 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 4px; margin: 16px 0 8px; line-height: 1.4;
+  }
+
+  .header-names {
+    font-family: 'Cinzel', serif; font-size: 12px;
+    color: var(--blue-glow); letter-spacing: 6px; margin-bottom: 6px;
+    text-shadow: 0 0 24px rgba(122,176,248,0.5);
+  }
+  .header-sub {
+    font-size: 11px; color: var(--text-dim);
+    letter-spacing: 3px; font-style: italic; margin-bottom: 20px;
+  }
+
+  /* ── NAV TABS ── */
+  .nav-tabs {
+    display: flex; gap: 6px; margin-bottom: 20px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid rgba(180,130,60,0.12);
+    padding-bottom: 14px;
+  }
+
+  .nav-tab {
+    padding: 8px 16px;
+    background: transparent;
+    border: 1px solid var(--border-blue);
+    color: var(--text-dim);
+    font-family: 'Cinzel', serif; font-size: 10px;
+    letter-spacing: 2px; cursor: pointer;
+    transition: all 0.3s; text-transform: uppercase;
+    position: relative; overflow: hidden;
+  }
+  .nav-tab::after {
+    content: ''; position: absolute;
+    bottom: 0; left: 0; right: 0; height: 1px;
+    background: var(--bronze-light);
+    transform: scaleX(0); transition: transform 0.3s;
+  }
+  .nav-tab:hover::after { transform: scaleX(1); }
+  .nav-tab:hover { border-color: var(--border-bright); color: var(--bronze-bright); background: rgba(180,115,51,0.05); }
+  .nav-tab.active {
+    background: linear-gradient(135deg, rgba(26,58,107,0.4), rgba(26,58,107,0.1));
+    border-color: var(--blue-light); color: var(--blue-glow);
+  }
+  .nav-tab.active::after { transform: scaleX(1); background: var(--blue-light); }
+  .nav-tab-memoir { margin-left: auto; border-color: rgba(138,106,200,0.2); color: rgba(138,106,200,0.45); }
+  .nav-tab-memoir:hover { border-color: var(--purple-light); color: var(--purple-light); }
+  .nav-tab-memoir.active { background: rgba(74,42,122,0.2); border-color: var(--purple-light); color: var(--purple-light); }
+
+  /* ── TOOLBAR ── */
+  .toolbar { display: flex; gap: 10px; margin-bottom: 18px; align-items: center; flex-wrap: wrap; }
+  .search-box { flex: 1; min-width: 200px; position: relative; }
+  .search-box input {
+    width: 100%; background: var(--bg-card);
+    border: 1px solid var(--border-blue); color: var(--text);
+    padding: 10px 16px 10px 36px;
+    font-family: 'Lora', serif; font-size: 13px;
+    outline: none; transition: all 0.3s;
+  }
+  .search-box input:focus { border-color: var(--blue-light); box-shadow: 0 0 14px rgba(74,127,212,0.12); }
+  .search-box input::placeholder { color: var(--text-dim); }
+  .search-icon { position: absolute; left: 11px; top: 50%; transform: translateY(-50%); color: var(--text-dim); font-size: 13px; }
+
+  .btn {
+    padding: 9px 16px;
+    border: 1px solid var(--border-bright);
+    background: linear-gradient(135deg, rgba(180,115,51,0.18), rgba(180,115,51,0.04));
+    color: var(--bronze-bright);
+    font-family: 'Cinzel', serif; font-size: 9px;
+    letter-spacing: 2px; cursor: pointer;
+    transition: all 0.3s; text-transform: uppercase; white-space: nowrap;
+  }
+  .btn:hover { box-shadow: 0 0 20px rgba(180,115,51,0.18); background: linear-gradient(135deg, rgba(180,115,51,0.28), rgba(180,115,51,0.08)); }
+  .btn-sm { padding: 6px 12px; font-size: 9px; }
+  .btn-blue {
+    border-color: var(--border-blue);
+    background: linear-gradient(135deg, rgba(26,58,107,0.3), rgba(26,58,107,0.08));
+    color: var(--blue-glow);
+  }
+  .btn-blue:hover { box-shadow: 0 0 16px rgba(74,127,212,0.18); }
+  .btn-danger { border-color: rgba(106,42,58,0.35); background: rgba(106,42,58,0.08); color: var(--rose-light); }
+  .btn-danger:hover { background: rgba(106,42,58,0.18); }
+
+  /* ── CATEGORY ── */
+  .category-section {
+    margin-bottom: 22px; border: 1px solid var(--border);
+    background: var(--bg-card); overflow: hidden; position: relative;
+  }
+  .category-section::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--blue-mid), var(--bronze-dim), var(--blue-mid), transparent);
+    opacity: 0.7;
+  }
+  [data-color="gold"] .category-section::before { background: linear-gradient(90deg, transparent, var(--bronze), var(--bronze-bright), var(--bronze), transparent); }
+  [data-color="blue"] .category-section::before { background: linear-gradient(90deg, transparent, var(--blue-mid), var(--blue-glow), var(--blue-mid), transparent); }
+  [data-color="teal"] .category-section::before { background: linear-gradient(90deg, transparent, var(--teal), var(--teal-light), var(--teal), transparent); }
+  [data-color="rose"] .category-section::before { background: linear-gradient(90deg, transparent, var(--rose), var(--rose-light), var(--rose), transparent); }
+  [data-color="purple"] .category-section::before { background: linear-gradient(90deg, transparent, var(--purple), var(--purple-light), var(--purple), transparent); }
+  [data-color="green"] .category-section::before { background: linear-gradient(90deg, transparent, var(--green), var(--green-light), var(--green), transparent); }
+
+  .category-header {
+    display: flex; align-items: center;
+    padding: 12px 16px; border-bottom: 1px solid var(--border);
+    gap: 10px; cursor: pointer; user-select: none;
+    transition: background 0.2s;
+    background: linear-gradient(135deg, rgba(10,20,45,0.8), transparent);
+  }
+  .category-header:hover { background: linear-gradient(135deg, rgba(20,32,58,0.9), rgba(20,32,58,0.3)); }
+
+  .category-icon { font-size: 15px; }
+  .category-title { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; flex: 1; }
+  [data-color="gold"] .category-title { color: var(--bronze-bright); }
+  [data-color="blue"] .category-title { color: var(--blue-glow); }
+  [data-color="teal"] .category-title { color: var(--teal-light); }
+  [data-color="rose"] .category-title { color: var(--rose-light); }
+  [data-color="purple"] .category-title { color: var(--purple-light); }
+  [data-color="green"] .category-title { color: var(--green-light); }
+  [data-color="cream"] .category-title { color: var(--cream); }
+
+  .category-count {
+    font-size: 10px; color: var(--text-dim);
+    background: rgba(255,255,255,0.03);
+    padding: 2px 8px; border: 1px solid var(--border);
+    font-family: 'Cinzel', serif;
+  }
+  .category-toggle { color: var(--text-dim); font-size: 10px; transition: transform 0.3s; }
+  .category-toggle.collapsed { transform: rotate(-90deg); }
+  .category-body { padding: 12px; }
+  .category-body.hidden { display: none; }
+
+  /* ── ITEM ── */
+  .item {
+    display: flex; align-items: flex-start; gap: 10px;
+    padding: 9px 12px; border: 1px solid transparent;
+    margin-bottom: 5px; transition: all 0.2s;
+    background: rgba(6,10,20,0.5); position: relative; cursor: grab;
+  }
+  .item:active { cursor: grabbing; }
+  .item:hover { border-color: var(--border-blue); background: var(--bg-hover); }
+  .item.dragging { opacity: 0.35; border-color: var(--bronze-dim); border-style: dashed; }
+  .item.drag-over { border-color: var(--bronze-light); background: rgba(180,115,51,0.05); }
+
+  .item-drag { color: var(--text-dim); font-size: 11px; padding-top: 3px; cursor: grab; flex-shrink: 0; opacity: 0.4; transition: opacity 0.2s; }
+  .item:hover .item-drag { opacity: 1; }
+
+  /* Ravenclaw diamond checkbox */
+  .item-check {
+    width: 14px; height: 14px;
+    border: 1px solid var(--border-bright);
+    background: transparent; cursor: pointer;
+    flex-shrink: 0; margin-top: 3px;
+    appearance: none; position: relative;
+    transition: all 0.3s; transform: rotate(45deg);
+  }
+  .item-check:checked { background: var(--bronze-dim); border-color: var(--bronze-bright); box-shadow: 0 0 8px rgba(212,165,90,0.4); }
+  .item-check:checked::after {
+    content: '✦'; position: absolute;
+    top: -5px; left: -2px;
+    font-size: 14px; color: var(--bronze-bright);
+    transform: rotate(-45deg);
+  }
+
+  .item-content { flex: 1; min-width: 0; }
+  .item-name { font-size: 14px; color: var(--text); margin-bottom: 3px; line-height: 1.4; }
+  .item-name.done { text-decoration: line-through; color: var(--text-dim); }
+  .item-meta { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .item-note { font-size: 11px; color: var(--silver-dim); font-style: italic; }
+  .item-link { font-size: 10px; color: var(--teal-light); text-decoration: none; border-bottom: 1px solid rgba(74,184,204,0.3); letter-spacing: 0.5px; transition: all 0.2s; }
+  .item-link:hover { color: var(--blue-glow); border-color: var(--blue-glow); }
+  .item-link.cal { color: var(--purple-light); border-color: rgba(138,106,200,0.3); }
+
+  .item-actions { display: flex; gap: 4px; opacity: 0; transition: opacity 0.2s; flex-shrink: 0; }
+  .item:hover .item-actions { opacity: 1; }
+  .item-btn {
+    background: transparent; border: 1px solid var(--border);
+    color: var(--text-dim); width: 24px; height: 24px;
+    cursor: pointer; font-size: 11px; transition: all 0.2s;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .item-btn:hover { border-color: var(--bronze-light); color: var(--bronze-bright); }
+  .item-btn.del:hover { border-color: var(--rose-light); color: var(--rose-light); }
+
+  .empty-state {
+    text-align: center; padding: 26px;
+    color: var(--text-dim); font-style: italic;
+    font-size: 12px; letter-spacing: 1px;
+    border: 1px dashed rgba(180,115,51,0.12);
+  }
+
+  /* ── MEMOIR ── */
+  .memoir-page { display: none; }
+  .memoir-page.active { display: block; }
+  .memoir-header { text-align: center; padding: 24px 0 26px; margin-bottom: 18px; }
+  .memoir-orn { color: rgba(138,106,200,0.35); font-size: 12px; letter-spacing: 6px; margin: 8px 0; }
+  .memoir-title {
+    font-family: 'Cinzel Decorative', serif; font-size: 20px;
+    background: linear-gradient(135deg, var(--purple-light), #c8a8f8, var(--purple-light));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    letter-spacing: 3px;
+  }
+  .memoir-sub { font-size: 11px; color: var(--text-dim); letter-spacing: 2px; font-style: italic; }
+  .memoir-item {
+    display: flex; align-items: center; gap: 12px;
+    padding: 10px 14px; border: 1px solid rgba(138,106,200,0.1);
+    background: rgba(74,42,122,0.04); margin-bottom: 5px; transition: all 0.2s;
+  }
+  .memoir-item:hover { background: rgba(74,42,122,0.1); border-color: rgba(138,106,200,0.22); }
+  .memoir-check { color: var(--purple-light); font-size: 12px; }
+  .memoir-name { flex: 1; font-size: 13px; color: var(--cream-dim); text-decoration: line-through; }
+  .memoir-cat { font-size: 9px; color: var(--purple-light); opacity: 0.55; letter-spacing: 1px; font-family: 'Cinzel', serif; }
+  .memoir-restore {
+    background: transparent; border: 1px solid rgba(138,106,200,0.28);
+    color: var(--purple-light); font-size: 9px; padding: 3px 8px;
+    cursor: pointer; font-family: 'Cinzel', serif; letter-spacing: 1px; transition: all 0.2s;
+  }
+  .memoir-restore:hover { background: rgba(74,42,122,0.22); }
+
+  /* ── MODAL ── */
+  .modal-overlay {
+    display: none; position: fixed; inset: 0;
+    background: rgba(2,6,14,0.88); z-index: 100;
+    align-items: center; justify-content: center; backdrop-filter: blur(5px);
+  }
+  .modal-overlay.active { display: flex; }
+  .modal {
+    background: var(--bg-panel); border: 1px solid var(--border-bright);
+    padding: 28px; max-width: 480px; width: 90%; position: relative;
+    box-shadow: 0 0 80px rgba(26,58,107,0.35), 0 0 140px rgba(0,0,0,0.8);
+  }
+  .modal::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--blue-mid), var(--bronze-light), var(--blue-mid), transparent);
+  }
+  .modal-eagle { text-align: center; font-size: 22px; margin-bottom: 6px; filter: drop-shadow(0 0 10px rgba(74,127,212,0.6)); }
+  .modal h3 { font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: 3px; color: var(--bronze-bright); margin-bottom: 20px; text-transform: uppercase; text-align: center; }
+  .modal-field { margin-bottom: 13px; }
+  .modal-field label { display: block; font-size: 9px; letter-spacing: 3px; color: var(--blue-glow); text-transform: uppercase; margin-bottom: 6px; font-family: 'Cinzel', serif; }
+  .modal-field input, .modal-field textarea, .modal-field select {
+    width: 100%; background: var(--bg-card); border: 1px solid var(--border-blue);
+    color: var(--text); padding: 10px 12px;
+    font-family: 'Lora', serif; font-size: 13px; outline: none; transition: all 0.3s; resize: vertical;
+  }
+  .modal-field input:focus, .modal-field textarea:focus, .modal-field select:focus { border-color: var(--blue-light); box-shadow: 0 0 12px rgba(74,127,212,0.12); }
+  .modal-field input::placeholder, .modal-field textarea::placeholder { color: var(--text-dim); }
+  .modal-field select option { background: var(--bg-card); }
+  .modal-actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 20px; padding-top: 14px; border-top: 1px solid var(--border); }
+  .btn-close { padding: 9px 16px; background: transparent; border: 1px solid var(--border); color: var(--text-dim); font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 2px; cursor: pointer; transition: all 0.2s; text-transform: uppercase; }
+  .btn-close:hover { border-color: var(--border-bright); color: var(--text); }
+
+  .cat-icon-picker { display: flex; gap: 6px; flex-wrap: wrap; }
+  .cat-icon-opt { width: 34px; height: 34px; border: 1px solid var(--border); background: var(--bg-card); cursor: pointer; font-size: 16px; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
+  .cat-icon-opt:hover, .cat-icon-opt.selected { border-color: var(--bronze-light); background: var(--bg-hover); }
+  .cat-color-picker { display: flex; gap: 8px; flex-wrap: wrap; }
+  .cat-color-opt { width: 30px; height: 30px; border: 2px solid transparent; cursor: pointer; transition: all 0.2s; }
+  .cat-color-opt.selected { border-color: var(--bronze-bright); box-shadow: 0 0 10px rgba(212,165,90,0.45); }
+
+  /* ── FOOTER ── */
+  .footer-bar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 13px 20px; border: 1px solid var(--border);
+    background: var(--bg-card); margin-top: 30px; flex-wrap: wrap; gap: 10px;
+    position: relative; overflow: hidden;
+  }
+  .footer-bar::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--blue-mid), var(--bronze-dim), var(--blue-mid), transparent); }
+  .sync-status { display: flex; align-items: center; gap: 8px; font-size: 10px; color: var(--text-dim); letter-spacing: 1px; font-family: 'Cinzel', serif; }
+  .sync-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green-light); box-shadow: 0 0 6px var(--green-light); animation: pulse 2s infinite; }
+  .sync-dot.offline { background: var(--rose-light); box-shadow: 0 0 6px var(--rose-light); animation: none; }
+  @keyframes pulse { 0%,100%{opacity:1}50%{opacity:0.25} }
+  .footer-names { font-family: 'Cinzel', serif; font-size: 10px; color: var(--bronze-dim); letter-spacing: 3px; }
+  .footer-names span { color: var(--blue-light); }
+
+  .loading { text-align: center; padding: 50px; color: var(--text-dim); font-style: italic; font-size: 12px; letter-spacing: 2px; }
+  .loading::before { content: '🦅'; display: block; font-size: 30px; margin-bottom: 14px; animation: float 2s ease-in-out infinite; }
+
+  @media(max-width:600px){
+    .nav-tab{font-size:9px;padding:6px 10px}
+    .header h1{font-size:14px;letter-spacing:2px}
+    .header-names{font-size:11px;letter-spacing:3px}
+  }
+</style>
+</head>
+<body>
+
+<div id="starfield"></div>
+<div class="eagle-bg">🦅</div>
+
+<div class="app">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="ornament-row">
+      <div class="orn-line"></div>
+      <div class="orn-diamond-sm"></div>
+      <div class="orn-diamond"></div>
+      <div class="orn-diamond-sm"></div>
+      <div class="orn-line"></div>
+    </div>
+    <div class="crest-wrap">
+      <div class="crest-house">✦ &nbsp; Ravenclaw &nbsp; ✦</div>
+      <span class="eagle-icon">🦅</span>
+      <div class="crest-motto">Wit beyond measure is man's greatest treasure</div>
+    </div>
+    <h1>The Magic List</h1>
+    <div class="header-names">✦ &nbsp; Koiyume &nbsp; &amp; &nbsp; Shin696 &nbsp; ✦</div>
+    <div class="header-sub">願所有美好，都被我們一一記住</div>
+    <div class="ornament-row">
+      <div class="orn-line"></div>
+      <div class="orn-diamond-sm"></div>
+      <div class="orn-diamond"></div>
+      <div class="orn-diamond-sm"></div>
+      <div class="orn-line"></div>
+    </div>
+  </div>
+
+  <!-- MAIN PAGE -->
+  <div id="mainPage">
+    <div class="nav-tabs" id="navTabs"></div>
+    <div class="toolbar">
+      <div class="search-box">
+        <span class="search-icon">⌕</span>
+        <input type="text" id="searchInput" placeholder="搜尋所有卷軸…">
+      </div>
+      <button class="btn btn-blue btn-sm" onclick="openAddCategory()">✦ 新增分類</button>
+      <button class="btn btn-sm" onclick="exportExcel()">⬇ 匯出</button>
+    </div>
+    <div id="categoriesContainer"><div class="loading">正在連接魔法資料庫…</div></div>
+  </div>
+
+  <!-- MEMOIR PAGE -->
+  <div id="memoirPage" class="memoir-page">
+    <div class="memoir-header">
+      <div class="memoir-orn">── ✦ ──</div>
+      <div class="memoir-title">✦ 回憶錄 ✦</div>
+      <div class="memoir-sub">那些我們走過的地方，吃過的美食，帶回家的寶物</div>
+      <div class="memoir-orn">── ✦ ──</div>
+    </div>
+    <div id="memoirContainer"><div class="empty-state">回憶錄還是空的 ✦ 勾選完成的項目會出現在這裡</div></div>
+  </div>
+
+  <div class="footer-bar">
+    <div class="sync-status">
+      <div class="sync-dot" id="syncDot"></div>
+      <span id="syncText">連接中…</span>
+    </div>
+    <div class="footer-names"><span>Koiyume</span> &nbsp;✦&nbsp; <span>Shin696</span></div>
+  </div>
+</div>
+
+<!-- ITEM MODAL -->
+<div class="modal-overlay" id="itemModal">
+  <div class="modal">
+    <div class="modal-eagle">🦅</div>
+    <h3 id="itemModalTitle">新增項目</h3>
+    <div class="modal-field"><label>名稱 *</label><input type="text" id="itemName" placeholder="輸入名稱…"></div>
+    <div class="modal-field"><label>備註</label><textarea id="itemNote" rows="2" placeholder="備註、說明…"></textarea></div>
+    <div class="modal-field"><label>連結（Google 地圖 / 購物連結）</label><input type="url" id="itemLink" placeholder="https://…"></div>
+    <div class="modal-field"><label>Google 日曆連結</label><input type="url" id="itemCalendar" placeholder="https://calendar.google.com/…"></div>
+    <div class="modal-actions">
+      <button class="btn-close" onclick="closeItemModal()">取消</button>
+      <button class="btn" onclick="saveItem()">✦ 儲存</button>
+    </div>
+  </div>
+</div>
+
+<!-- CATEGORY MODAL -->
+<div class="modal-overlay" id="catModal">
+  <div class="modal">
+    <div class="modal-eagle">🦅</div>
+    <h3>新增分類</h3>
+    <div class="modal-field"><label>分類名稱 *</label><input type="text" id="catName" placeholder="例如：想看電影、旅遊計畫…"></div>
+    <div class="modal-field"><label>圖示</label><div class="cat-icon-picker" id="catIconPicker"></div></div>
+    <div class="modal-field"><label>顏色</label><div class="cat-color-picker" id="catColorPicker"></div></div>
+    <div class="modal-actions">
+      <button class="btn-close" onclick="closeCatModal()">取消</button>
+      <button class="btn" onclick="saveCategory()">✦ 建立</button>
+    </div>
+  </div>
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getDatabase, ref, set, push, remove, update, onValue } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCk4NRLlPK3MKZIkXk7Tsd7e_Y8YZrvdNo",
+  authDomain: "magic-list-d4941.firebaseapp.com",
+  databaseURL: "https://magic-list-d4941-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "magic-list-d4941",
+  storageBucket: "magic-list-d4941.firebasestorage.app",
+  messagingSenderId: "864996294074",
+  appId: "1:864996294074:web:921479e2022ae701037183"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+
+// Starfield
+(()=>{
+  const sf=document.getElementById('starfield');
+  for(let i=0;i<130;i++){
+    const s=document.createElement('div');
+    s.className='star';
+    const sz=Math.random()*2+0.4;
+    s.style.cssText=`width:${sz}px;height:${sz}px;left:${Math.random()*100}%;top:${Math.random()*100}%;--dur:${2+Math.random()*4}s;--delay:-${Math.random()*5}s;--mn:${0.04+Math.random()*0.08};--mx:${0.4+Math.random()*0.6};`;
+    sf.appendChild(s);
+  }
+})();
+
+// State
+let categories={}, items={}, activeTab=null, showMemoir=false;
+let editingItemId=null, currentCatId=null, dragSrcId=null;
+let selectedIcon='✨', selectedColor='gold', searchQuery='';
+
+const ICONS=['🍜','🍱','🍣','🍕','☕','🍰','🍷','🎬','🏔️','🌊','🌸','🛍️','💎','🎁','✈️','🏠','🎮','📚','🎵','💐','⭐','✨','🔮','🗺️','🕯️','🪄','🦅','📖','🌙','🏺','🎪','🌃'];
+const COLORS=['gold','blue','teal','rose','purple','green','cream'];
+const COLOR_HEX={gold:'#d4a55a',blue:'#4a7fd4',teal:'#4ab8cc',rose:'#cc5570',purple:'#8a6ac8',green:'#5ab870',cream:'#f0e6cc'};
+const DEFAULT_CATS=[{name:'想吃美食',icon:'🍜',color:'gold'},{name:'想去哪裡',icon:'🗺️',color:'teal'},{name:'待買清單',icon:'🛍️',color:'rose'}];
+
+onValue(ref(db,'categories'), snap=>{
+  categories=snap.val()||{};
+  if(!Object.keys(categories).length){
+    DEFAULT_CATS.forEach(c=>{const r=push(ref(db,'categories'));set(r,{...c,order:Date.now()});});
+    return;
+  }
+  renderAll();
+},()=>{
+  document.getElementById('syncDot').classList.add('offline');
+  document.getElementById('syncText').textContent='連線失敗';
+});
+
+onValue(ref(db,'items'),snap=>{
+  items=snap.val()||{};
+  renderAll();
+  document.getElementById('syncDot').classList.remove('offline');
+  document.getElementById('syncText').textContent='已同步 ✦';
+});
+
+function renderAll(){renderTabs();showMemoir?renderMemoir():renderCategories();}
+
+function sortedCats(){return Object.entries(categories).sort((a,b)=>(a[1].order||0)-(b[1].order||0));}
+
+function renderTabs(){
+  const tabs=document.getElementById('navTabs');
+  const cats=sortedCats();
+  let h=`<button class="nav-tab ${!showMemoir&&activeTab===null?'active':''}" onclick="setTab(null)">全部</button>`;
+  cats.forEach(([id,c])=>{
+    const a=!showMemoir&&activeTab===id?'active':'';
+    h+=`<button class="nav-tab ${a}" onclick="setTab('${id}')">${c.icon} ${c.name}</button>`;
+  });
+  h+=`<button class="nav-tab nav-tab-memoir ${showMemoir?'active':''}" onclick="toggleMemoir()">📖 回憶錄</button>`;
+  tabs.innerHTML=h;
+}
+
+function renderCategories(){
+  document.getElementById('mainPage').style.display='';
+  document.getElementById('memoirPage').classList.remove('active');
+  const container=document.getElementById('categoriesContainer');
+  const q=searchQuery.toLowerCase();
+  const cats=activeTab?[[activeTab,categories[activeTab]]]:sortedCats();
+  if(!cats.length){container.innerHTML='<div class="empty-state">還沒有分類 — 點「新增分類」開始吧 ✦</div>';return;}
+  container.innerHTML=cats.filter(([id,c])=>c).map(([id,cat])=>{
+    const ci=Object.entries(items)
+      .filter(([,i])=>i.catId===id&&!i.done)
+      .filter(([,i])=>!q||i.name.toLowerCase().includes(q)||(i.note||'').toLowerCase().includes(q))
+      .sort((a,b)=>(a[1].order||0)-(b[1].order||0));
+    const count=ci.length;
+    const ih=count===0?'<div class="empty-state">這個分類還是空的</div>':ci.map(([iid,it])=>itemHtml(iid,it)).join('');
+    return `<div class="category-section" data-color="${cat.color||'gold'}" data-catid="${id}">
+      <div class="category-header" onclick="toggleCat('${id}')">
+        <span class="category-icon">${cat.icon||'✦'}</span>
+        <span class="category-title">${cat.name}</span>
+        <span class="category-count">${count}</span>
+        <button class="btn btn-blue btn-sm" style="margin-left:8px" onclick="event.stopPropagation();openAddItem('${id}')">＋</button>
+        <button class="btn btn-sm btn-danger" style="margin-left:4px" onclick="event.stopPropagation();deleteCat('${id}')">✕</button>
+        <span class="category-toggle ${cat.collapsed?'collapsed':''}" id="toggle_${id}">▾</span>
+      </div>
+      <div class="category-body ${cat.collapsed?'hidden':''}" id="body_${id}"><div class="item-list" id="list_${id}">${ih}</div></div>
+    </div>`;
+  }).join('');
+
+  document.querySelectorAll('.item').forEach(el=>{
+    el.addEventListener('dragstart',()=>{dragSrcId=el.dataset.iid;el.classList.add('dragging');});
+    el.addEventListener('dragend',()=>{el.classList.remove('dragging');document.querySelectorAll('.item').forEach(i=>i.classList.remove('drag-over'));});
+    el.addEventListener('dragover',e=>{e.preventDefault();el.classList.add('drag-over');});
+    el.addEventListener('dragleave',()=>el.classList.remove('drag-over'));
+    el.addEventListener('drop',e=>{e.preventDefault();el.classList.remove('drag-over');if(dragSrcId&&dragSrcId!==el.dataset.iid)swapOrder(dragSrcId,el.dataset.iid);});
+  });
+}
+
+function itemHtml(iid,item){
+  const isMap=item.link&&(item.link.includes('maps')||item.link.includes('goo.gl'));
+  const lbl=isMap?'📍 地圖':'🔗 連結';
+  const lh=item.link?`<a class="item-link" href="${item.link}" target="_blank">${lbl}</a>`:'';
+  const ch=item.calendar?`<a class="item-link cal" href="${item.calendar}" target="_blank">📅 日曆</a>`:'';
+  const nh=item.note?`<span class="item-note">${item.note}</span>`:'';
+  return `<div class="item" draggable="true" data-iid="${iid}">
+    <span class="item-drag">⠿</span>
+    <input type="checkbox" class="item-check" ${item.done?'checked':''} onchange="toggleDone('${iid}',this.checked)">
+    <div class="item-content">
+      <div class="item-name ${item.done?'done':''}">${item.name}</div>
+      <div class="item-meta">${nh}${lh}${ch}</div>
+    </div>
+    <div class="item-actions">
+      <button class="item-btn" onclick="openEditItem('${iid}')" title="編輯">✎</button>
+      <button class="item-btn del" onclick="deleteItem('${iid}')" title="刪除">✕</button>
+    </div>
+  </div>`;
+}
+
+function renderMemoir(){
+  document.getElementById('memoirPage').classList.add('active');
+  const done=Object.entries(items).filter(([,i])=>i.done).sort((a,b)=>(b[1].doneAt||0)-(a[1].doneAt||0));
+  const container=document.getElementById('memoirContainer');
+  if(!done.length){container.innerHTML='<div class="empty-state">回憶錄還是空的 ✦ 勾選完成的項目會出現在這裡</div>';return;}
+  container.innerHTML=done.map(([iid,item])=>{
+    const cat=categories[item.catId];
+    const cn=cat?`${cat.icon} ${cat.name}`:'';
+    const lh=item.link?`<a class="item-link" href="${item.link}" target="_blank" style="margin-left:8px">連結</a>`:'';
+    return `<div class="memoir-item">
+      <span class="memoir-check">✦</span>
+      <span class="memoir-name">${item.name}${lh}</span>
+      <span class="memoir-cat">${cn}</span>
+      <button class="memoir-restore" onclick="restoreItem('${iid}')">還原</button>
+      <button class="item-btn del" onclick="deleteItem('${iid}')" style="opacity:1">✕</button>
+    </div>`;
+  }).join('');
+}
+
+window.setTab=id=>{activeTab=id;showMemoir=false;renderAll();};
+window.toggleMemoir=()=>{showMemoir=!showMemoir;renderAll();};
+window.toggleCat=id=>update(ref(db,`categories/${id}`),{collapsed:!(categories[id]?.collapsed)});
+window.toggleDone=(iid,done)=>update(ref(db,`items/${iid}`),{done,doneAt:done?Date.now():null});
+window.restoreItem=iid=>update(ref(db,`items/${iid}`),{done:false,doneAt:null});
+window.deleteItem=iid=>{if(confirm('確定刪除？'))remove(ref(db,`items/${iid}`));};
+window.deleteCat=id=>{
+  if(confirm('確定刪除這個分類？分類內的項目也會一起刪除。')){
+    remove(ref(db,`categories/${id}`));
+    Object.entries(items).filter(([,i])=>i.catId===id).forEach(([iid])=>remove(ref(db,`items/${iid}`)));
+    if(activeTab===id)activeTab=null;
+  }
+};
+window.swapOrder=(id1,id2)=>{
+  const o1=items[id1]?.order||0,o2=items[id2]?.order||0;
+  update(ref(db,`items/${id1}`),{order:o2});
+  update(ref(db,`items/${id2}`),{order:o1});
+};
+
+window.openAddItem=catId=>{
+  editingItemId=null;currentCatId=catId;
+  document.getElementById('itemModalTitle').textContent='新增項目';
+  ['itemName','itemNote','itemLink','itemCalendar'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('itemModal').classList.add('active');
+  setTimeout(()=>document.getElementById('itemName').focus(),80);
+};
+window.openEditItem=iid=>{
+  editingItemId=iid;const item=items[iid];currentCatId=item.catId;
+  document.getElementById('itemModalTitle').textContent='編輯項目';
+  document.getElementById('itemName').value=item.name||'';
+  document.getElementById('itemNote').value=item.note||'';
+  document.getElementById('itemLink').value=item.link||'';
+  document.getElementById('itemCalendar').value=item.calendar||'';
+  document.getElementById('itemModal').classList.add('active');
+};
+window.closeItemModal=()=>document.getElementById('itemModal').classList.remove('active');
+window.saveItem=()=>{
+  const name=document.getElementById('itemName').value.trim();if(!name)return;
+  const data={name,note:document.getElementById('itemNote').value.trim(),link:document.getElementById('itemLink').value.trim(),calendar:document.getElementById('itemCalendar').value.trim(),catId:currentCatId,done:false,order:Date.now()};
+  editingItemId?update(ref(db,`items/${editingItemId}`),data):push(ref(db,'items'),data);
+  closeItemModal();
+};
+
+window.openAddCategory=()=>{
+  document.getElementById('catName').value='';selectedIcon='✨';selectedColor='gold';
+  renderIconPicker();renderColorPicker();
+  document.getElementById('catModal').classList.add('active');
+};
+window.closeCatModal=()=>document.getElementById('catModal').classList.remove('active');
+function renderIconPicker(){document.getElementById('catIconPicker').innerHTML=ICONS.map(i=>`<div class="cat-icon-opt ${i===selectedIcon?'selected':''}" onclick="selectIcon('${i}')">${i}</div>`).join('');}
+function renderColorPicker(){document.getElementById('catColorPicker').innerHTML=COLORS.map(c=>`<div class="cat-color-opt ${c===selectedColor?'selected':''}" style="background:${COLOR_HEX[c]}" onclick="selectColor('${c}')"></div>`).join('');}
+window.selectIcon=icon=>{selectedIcon=icon;renderIconPicker();};
+window.selectColor=color=>{selectedColor=color;renderColorPicker();};
+window.saveCategory=()=>{
+  const name=document.getElementById('catName').value.trim();if(!name)return;
+  push(ref(db,'categories'),{name,icon:selectedIcon,color:selectedColor,order:Date.now()});
+  closeCatModal();
+};
+
+document.getElementById('searchInput').addEventListener('input',e=>{searchQuery=e.target.value;if(!showMemoir)renderCategories();});
+
+window.exportExcel=()=>{
+  const rows=[['分類','名稱','備註','連結','日曆連結','完成']];
+  Object.entries(items).forEach(([,item])=>{const cat=categories[item.catId];rows.push([cat?cat.name:'',item.name||'',item.note||'',item.link||'',item.calendar||'',item.done?'✓':'']);});
+  const csv=rows.map(r=>r.map(c=>`"${String(c).replace(/"/g,'""')}"`).join(',')).join('\n');
+  const blob=new Blob(['\uFEFF'+csv],{type:'text/csv;charset=utf-8;'});
+  const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='magic-list.csv';a.click();URL.revokeObjectURL(url);
+};
+
+document.getElementById('itemName').addEventListener('keydown',e=>{if(e.key==='Enter')saveItem();});
+document.getElementById('catName').addEventListener('keydown',e=>{if(e.key==='Enter')saveCategory();});
+document.getElementById('itemModal').addEventListener('click',e=>{if(e.target===e.currentTarget)closeItemModal();});
+document.getElementById('catModal').addEventListener('click',e=>{if(e.target===e.currentTarget)closeCatModal();});
+</script>
+</body>
+</html>
