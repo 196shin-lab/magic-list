@@ -73,7 +73,7 @@
   /* ── Eagle watermark ── */
   .eagle-bg {
     position: fixed; right: -60px; bottom: -40px;
-    font-size: 280px; opacity: 0.025;
+    font-size: 20px; opacity: 0.025;
     pointer-events: none; z-index: 0;
     filter: blur(2px);
     user-select: none;
@@ -116,25 +116,25 @@
   }
   .crest-house {
     font-family: 'Cinzel', serif;
-    font-size: 14px; letter-spacing: 10px;
+    font-size: 20px; letter-spacing: 10px;
     color: var(--bronze-dim); text-transform: uppercase;
     margin-bottom: 10px;
   }
   .eagle-icon {
-    font-size: 40px; display: block; margin-bottom: 6px;
+    font-size: 20px; display: block; margin-bottom: 6px;
     filter: drop-shadow(0 0 16px rgba(74,127,212,0.7));
     animation: float 4s ease-in-out infinite;
   }
   @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
   .crest-motto {
     font-family: 'Cinzel', serif; font-style: italic;
-    font-size: 14px; letter-spacing: 3px;
+    font-size: 20px; letter-spacing: 3px;
     color: var(--blue-light); margin-bottom: 0;
   }
 
   .header h1 {
     font-family: 'Cinzel Decorative', serif;
-    font-size: clamp(15px, 3.2vw, 30px);
+    font-size: clamp(22px, 4vw, 36px);
     background: linear-gradient(135deg, var(--bronze-light) 0%, var(--bronze-bright) 50%, var(--bronze-light) 100%);
     -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -142,12 +142,12 @@
   }
 
   .header-names {
-    font-family: 'Cinzel', serif; font-size: 17px;
+    font-family: 'Cinzel', serif; font-size: 20px;
     color: var(--blue-glow); letter-spacing: 6px; margin-bottom: 6px;
     text-shadow: 0 0 24px rgba(122,176,248,0.5);
   }
   .header-sub {
-    font-size: 16px; color: var(--text-dim);
+    font-size: 18px; color: var(--text-dim);
     letter-spacing: 3px; font-style: italic; margin-bottom: 20px;
   }
 
@@ -164,7 +164,7 @@
     background: transparent;
     border: 1px solid var(--border-blue);
     color: var(--text-dim);
-    font-family: 'Cinzel', serif; font-size: 15px;
+    font-family: 'Cinzel', serif; font-size: 20px;
     letter-spacing: 2px; cursor: pointer;
     transition: all 0.3s; text-transform: uppercase;
     position: relative; overflow: hidden;
@@ -193,24 +193,24 @@
     width: 100%; background: var(--bg-card);
     border: 1px solid var(--border-blue); color: var(--text);
     padding: 10px 16px 10px 36px;
-    font-family: 'Lora', serif; font-size: 18px;
+    font-family: 'Lora', serif; font-size: 20px;
     outline: none; transition: all 0.3s;
   }
   .search-box input:focus { border-color: var(--blue-light); box-shadow: 0 0 14px rgba(74,127,212,0.12); }
   .search-box input::placeholder { color: var(--text-dim); }
-  .search-icon { position: absolute; left: 11px; top: 50%; transform: translateY(-50%); color: var(--text-dim); font-size: 18px; }
+  .search-icon { position: absolute; left: 11px; top: 50%; transform: translateY(-50%); color: var(--text-dim); font-size: 20px; }
 
   .btn {
     padding: 9px 16px;
     border: 1px solid var(--border-bright);
     background: linear-gradient(135deg, rgba(180,115,51,0.18), rgba(180,115,51,0.04));
     color: var(--bronze-bright);
-    font-family: 'Cinzel', serif; font-size: 14px;
+    font-family: 'Cinzel', serif; font-size: 20px;
     letter-spacing: 2px; cursor: pointer;
     transition: all 0.3s; text-transform: uppercase; white-space: nowrap;
   }
   .btn:hover { box-shadow: 0 0 20px rgba(180,115,51,0.18); background: linear-gradient(135deg, rgba(180,115,51,0.28), rgba(180,115,51,0.08)); }
-  .btn-sm { padding: 6px 12px; font-size: 14px; }
+  .btn-sm { padding: 6px 12px; font-size: 20px; }
   .btn-blue {
     border-color: var(--border-blue);
     background: linear-gradient(135deg, rgba(26,58,107,0.3), rgba(26,58,107,0.08));
@@ -246,8 +246,8 @@
   }
   .category-header:hover { background: linear-gradient(135deg, rgba(20,32,58,0.9), rgba(20,32,58,0.3)); }
 
-  .category-icon { font-size: 18px; }
-  .category-title { font-family: 'Cinzel', serif; font-size: 16px; letter-spacing: 3px; text-transform: uppercase; flex: 1; }
+  .category-icon { font-size: 20px; }
+  .category-title { font-family: 'Cinzel', serif; font-size: 26px; letter-spacing: 3px; text-transform: uppercase; flex: 1; }
   [data-color="gold"] .category-title { color: var(--bronze-bright); }
   [data-color="blue"] .category-title { color: var(--blue-glow); }
   [data-color="teal"] .category-title { color: var(--teal-light); }
@@ -257,12 +257,12 @@
   [data-color="cream"] .category-title { color: var(--cream); }
 
   .category-count {
-    font-size: 15px; color: var(--text-dim);
+    font-size: 20px; color: var(--text-dim);
     background: rgba(255,255,255,0.03);
     padding: 2px 8px; border: 1px solid var(--border);
     font-family: 'Cinzel', serif;
   }
-  .category-toggle { color: var(--text-dim); font-size: 15px; transition: transform 0.3s; }
+  .category-toggle { color: var(--text-dim); font-size: 20px; transition: transform 0.3s; }
   .category-toggle.collapsed { transform: rotate(-90deg); }
   .category-body { padding: 12px; }
   .category-body.hidden { display: none; }
@@ -279,7 +279,7 @@
   .item.dragging { opacity: 0.35; border-color: var(--bronze-dim); border-style: dashed; }
   .item.drag-over { border-color: var(--bronze-light); background: rgba(180,115,51,0.05); }
 
-  .item-drag { color: var(--text-dim); font-size: 16px; padding-top: 3px; cursor: grab; flex-shrink: 0; opacity: 0.4; transition: opacity 0.2s; }
+  .item-drag { color: var(--text-dim); font-size: 20px; padding-top: 3px; cursor: grab; flex-shrink: 0; opacity: 0.4; transition: opacity 0.2s; }
   .item:hover .item-drag { opacity: 1; }
 
   /* Ravenclaw diamond checkbox */
@@ -303,8 +303,8 @@
   .item-name { font-size: 20px; color: var(--text); margin-bottom: 3px; line-height: 1.4; }
   .item-name.done { text-decoration: line-through; color: var(--text-dim); }
   .item-meta { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
-  .item-note { font-size: 16px; color: var(--silver-dim); font-style: italic; }
-  .item-link { font-size: 15px; color: var(--teal-light); text-decoration: none; border-bottom: 1px solid rgba(74,184,204,0.3); letter-spacing: 0.5px; transition: all 0.2s; }
+  .item-note { font-size: 20px; color: var(--silver-dim); font-style: italic; }
+  .item-link { font-size: 20px; color: var(--teal-light); text-decoration: none; border-bottom: 1px solid rgba(74,184,204,0.3); letter-spacing: 0.5px; transition: all 0.2s; }
   .item-link:hover { color: var(--blue-glow); border-color: var(--blue-glow); }
   .item-link.cal { color: var(--purple-light); border-color: rgba(138,106,200,0.3); }
 
@@ -313,21 +313,21 @@
   .item-btn {
     background: transparent; border: 1px solid var(--border);
     color: var(--text-dim); width: 24px; height: 24px;
-    cursor: pointer; font-size: 16px; transition: all 0.2s;
+    cursor: pointer; font-size: 20px; transition: all 0.2s;
     display: flex; align-items: center; justify-content: center;
   }
   .item-btn:hover { border-color: var(--bronze-light); color: var(--bronze-bright); }
   .item-btn.del:hover { border-color: var(--rose-light); color: var(--rose-light); }
 
-  .item-date { font-size: 15px; color: var(--bronze-light); letter-spacing: 0.5px; }
-  .item-priority { font-size: 15px; letter-spacing: 0.5px; }
+  .item-date { font-size: 20px; color: var(--bronze-light); letter-spacing: 0.5px; }
+  .item-priority { font-size: 20px; letter-spacing: 0.5px; }
   input[type="date"] { color-scheme: dark; }
 
   /* Priority picker */
   .priority-picker { display: flex; gap: 8px; flex-wrap: wrap; }
   .priority-opt {
     padding: 6px 12px; border: 1px solid var(--border); background: var(--bg-card);
-    color: var(--text-dim); font-size: 15px; cursor: pointer; transition: all 0.2s;
+    color: var(--text-dim); font-size: 20px; cursor: pointer; transition: all 0.2s;
     font-family: 'Lora', serif;
   }
   .priority-opt:hover { border-color: var(--border-bright); }
@@ -349,7 +349,7 @@
   }
     text-align: center; padding: 26px;
     color: var(--text-dim); font-style: italic;
-    font-size: 17px; letter-spacing: 1px;
+    font-size: 20px; letter-spacing: 1px;
     border: 1px dashed rgba(180,115,51,0.12);
   }
 
@@ -357,26 +357,26 @@
   .memoir-page { display: none; }
   .memoir-page.active { display: block; }
   .memoir-header { text-align: center; padding: 24px 0 26px; margin-bottom: 18px; }
-  .memoir-orn { color: rgba(138,106,200,0.35); font-size: 17px; letter-spacing: 6px; margin: 8px 0; }
+  .memoir-orn { color: rgba(138,106,200,0.35); font-size: 20px; letter-spacing: 6px; margin: 8px 0; }
   .memoir-title {
-    font-family: 'Cinzel Decorative', serif; font-size: 20px;
+    font-family: 'Cinzel Decorative', serif; font-size: 26px;
     background: linear-gradient(135deg, var(--purple-light), #c8a8f8, var(--purple-light));
     -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     letter-spacing: 3px;
   }
-  .memoir-sub { font-size: 16px; color: var(--text-dim); letter-spacing: 2px; font-style: italic; }
+  .memoir-sub { font-size: 20px; color: var(--text-dim); letter-spacing: 2px; font-style: italic; }
   .memoir-item {
     display: flex; align-items: center; gap: 12px;
     padding: 10px 14px; border: 1px solid rgba(138,106,200,0.1);
     background: rgba(74,42,122,0.04); margin-bottom: 5px; transition: all 0.2s;
   }
   .memoir-item:hover { background: rgba(74,42,122,0.1); border-color: rgba(138,106,200,0.22); }
-  .memoir-check { color: var(--purple-light); font-size: 17px; }
-  .memoir-name { flex: 1; font-size: 18px; color: var(--cream-dim); text-decoration: line-through; }
-  .memoir-cat { font-size: 14px; color: var(--purple-light); opacity: 0.55; letter-spacing: 1px; font-family: 'Cinzel', serif; }
+  .memoir-check { color: var(--purple-light); font-size: 20px; }
+  .memoir-name { flex: 1; font-size: 20px; color: var(--cream-dim); text-decoration: line-through; }
+  .memoir-cat { font-size: 20px; color: var(--purple-light); opacity: 0.55; letter-spacing: 1px; font-family: 'Cinzel', serif; }
   .memoir-restore {
     background: transparent; border: 1px solid rgba(138,106,200,0.28);
-    color: var(--purple-light); font-size: 14px; padding: 3px 8px;
+    color: var(--purple-light); font-size: 20px; padding: 3px 8px;
     cursor: pointer; font-family: 'Cinzel', serif; letter-spacing: 1px; transition: all 0.2s;
   }
   .memoir-restore:hover { background: rgba(74,42,122,0.22); }
@@ -397,24 +397,24 @@
     content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
     background: linear-gradient(90deg, transparent, var(--blue-mid), var(--bronze-light), var(--blue-mid), transparent);
   }
-  .modal-eagle { text-align: center; font-size: 22px; margin-bottom: 6px; filter: drop-shadow(0 0 10px rgba(74,127,212,0.6)); }
-  .modal h3 { font-family: 'Cinzel', serif; font-size: 17px; letter-spacing: 3px; color: var(--bronze-bright); margin-bottom: 20px; text-transform: uppercase; text-align: center; }
+  .modal-eagle { text-align: center; font-size: 20px; margin-bottom: 6px; filter: drop-shadow(0 0 10px rgba(74,127,212,0.6)); }
+  .modal h3 { font-family: 'Cinzel', serif; font-size: 20px; letter-spacing: 3px; color: var(--bronze-bright); margin-bottom: 20px; text-transform: uppercase; text-align: center; }
   .modal-field { margin-bottom: 13px; }
-  .modal-field label { display: block; font-size: 14px; letter-spacing: 3px; color: var(--blue-glow); text-transform: uppercase; margin-bottom: 6px; font-family: 'Cinzel', serif; }
+  .modal-field label { display: block; font-size: 20px; letter-spacing: 3px; color: var(--blue-glow); text-transform: uppercase; margin-bottom: 6px; font-family: 'Cinzel', serif; }
   .modal-field input, .modal-field textarea, .modal-field select {
     width: 100%; background: var(--bg-card); border: 1px solid var(--border-blue);
     color: var(--text); padding: 10px 12px;
-    font-family: 'Lora', serif; font-size: 18px; outline: none; transition: all 0.3s; resize: vertical;
+    font-family: 'Lora', serif; font-size: 20px; outline: none; transition: all 0.3s; resize: vertical;
   }
   .modal-field input:focus, .modal-field textarea:focus, .modal-field select:focus { border-color: var(--blue-light); box-shadow: 0 0 12px rgba(74,127,212,0.12); }
   .modal-field input::placeholder, .modal-field textarea::placeholder { color: var(--text-dim); }
   .modal-field select option { background: var(--bg-card); }
   .modal-actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 20px; padding-top: 14px; border-top: 1px solid var(--border); }
-  .btn-close { padding: 9px 16px; background: transparent; border: 1px solid var(--border); color: var(--text-dim); font-family: 'Cinzel', serif; font-size: 14px; letter-spacing: 2px; cursor: pointer; transition: all 0.2s; text-transform: uppercase; }
+  .btn-close { padding: 9px 16px; background: transparent; border: 1px solid var(--border); color: var(--text-dim); font-family: 'Cinzel', serif; font-size: 20px; letter-spacing: 2px; cursor: pointer; transition: all 0.2s; text-transform: uppercase; }
   .btn-close:hover { border-color: var(--border-bright); color: var(--text); }
 
   .cat-icon-picker { display: flex; gap: 6px; flex-wrap: wrap; }
-  .cat-icon-opt { width: 34px; height: 34px; border: 1px solid var(--border); background: var(--bg-card); cursor: pointer; font-size: 20px; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
+  .cat-icon-opt { width: 52px; height: 52px; border: 1px solid var(--border); background: var(--bg-card); cursor: pointer; font-size: 28px; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
   .cat-icon-opt:hover, .cat-icon-opt.selected { border-color: var(--bronze-light); background: var(--bg-hover); }
   .cat-color-picker { display: flex; gap: 8px; flex-wrap: wrap; }
   .cat-color-opt { width: 30px; height: 30px; border: 2px solid transparent; cursor: pointer; transition: all 0.2s; }
@@ -428,21 +428,60 @@
     position: relative; overflow: hidden;
   }
   .footer-bar::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--blue-mid), var(--bronze-dim), var(--blue-mid), transparent); }
-  .sync-status { display: flex; align-items: center; gap: 8px; font-size: 15px; color: var(--text-dim); letter-spacing: 1px; font-family: 'Cinzel', serif; }
+  .sync-status { display: flex; align-items: center; gap: 8px; font-size: 20px; color: var(--text-dim); letter-spacing: 1px; font-family: 'Cinzel', serif; }
   .sync-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green-light); box-shadow: 0 0 6px var(--green-light); animation: pulse 2s infinite; }
   .sync-dot.offline { background: var(--rose-light); box-shadow: 0 0 6px var(--rose-light); animation: none; }
   @keyframes pulse { 0%,100%{opacity:1}50%{opacity:0.25} }
-  .footer-names { font-family: 'Cinzel', serif; font-size: 15px; color: var(--bronze-dim); letter-spacing: 3px; }
+  .footer-names { font-family: 'Cinzel', serif; font-size: 20px; color: var(--bronze-dim); letter-spacing: 3px; }
   .footer-names span { color: var(--blue-light); }
 
-  .loading { text-align: center; padding: 50px; color: var(--text-dim); font-style: italic; font-size: 17px; letter-spacing: 2px; }
-  .loading::before { content: '🦅'; display: block; font-size: 30px; margin-bottom: 14px; animation: float 2s ease-in-out infinite; }
+  .loading { text-align: center; padding: 50px; color: var(--text-dim); font-style: italic; font-size: 20px; letter-spacing: 2px; }
+  .loading::before { content: '🦅'; display: block; font-size: 20px; margin-bottom: 14px; animation: float 2s ease-in-out infinite; }
 
   @media(max-width:600px){
     .nav-tab{font-size:9px;padding:6px 10px}
     .header h1{font-size:14px;letter-spacing:2px}
     .header-names{font-size:11px;letter-spacing:3px}
   }
+
+  /* ── PIGGY BANK ── */
+  .nav-tab-piggy { border-color: rgba(212,165,90,0.3); color: rgba(212,165,90,0.5); }
+  .nav-tab-piggy:hover { border-color: var(--bronze-light); color: var(--bronze-bright); }
+  .nav-tab-piggy.active { background: rgba(180,115,51,0.2); border-color: var(--bronze-bright); color: var(--bronze-bright); }
+
+  .piggy-section { border: 1px solid var(--border); background: var(--bg-card); overflow: hidden; }
+  .piggy-section::before { content:''; position:absolute; top:0;left:0;right:0;height:2px; background:linear-gradient(90deg,transparent,var(--bronze),var(--bronze-bright),var(--bronze),transparent); }
+  .piggy-section { position: relative; }
+  .piggy-section-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 18px; border-bottom: 1px solid var(--border);
+    font-family: 'Cinzel', serif; font-size: 20px; color: var(--bronze-bright);
+    letter-spacing: 2px; background: linear-gradient(135deg,rgba(10,20,45,0.8),transparent);
+  }
+  .piggy-total {
+    padding: 12px 18px; font-size: 20px;
+    color: var(--text-dim); border-bottom: 1px solid var(--border);
+    font-family: 'Cinzel', serif; letter-spacing: 1px;
+  }
+  .piggy-total .pos { color: var(--green-light); font-size: 22px; }
+  .piggy-total .neg { color: var(--rose-light); font-size: 22px; }
+  .piggy-record {
+    display: flex; align-items: center; gap: 12px;
+    padding: 12px 18px; border-bottom: 1px solid rgba(180,130,60,0.08);
+    transition: background 0.2s;
+  }
+  .piggy-record:hover { background: var(--bg-hover); }
+  .piggy-record-icon { font-size: 22px; flex-shrink: 0; }
+  .piggy-record-content { flex: 1; min-width: 0; }
+  .piggy-record-name { display: block; font-size: 18px; color: var(--text); }
+  .piggy-record-note { display: block; font-size: 15px; color: var(--text-dim); font-style: italic; }
+  .piggy-record-date { display: block; font-size: 14px; color: var(--bronze-dim); }
+  .piggy-amount { font-size: 20px; font-family: 'Cinzel', serif; white-space: nowrap; }
+  .piggy-amount.pos { color: var(--green-light); }
+  .piggy-amount.neg { color: var(--rose-light); }
+
+  /* Pinned item */
+  .item-btn.pinned { color: var(--bronze-bright); border-color: var(--bronze-light); }
 </style>
 </head>
 <body>
@@ -468,7 +507,7 @@
     </div>
     <h1>The Magic List</h1>
     <div class="header-names">✦ &nbsp; Koiyume &nbsp; &amp; &nbsp; Shin696 &nbsp; ✦</div>
-    <div class="header-sub">願所有美好，都被我們一一記住</div>
+    <div class="header-sub">皮皮上學後的願望清單</div>
     <div class="ornament-row">
       <div class="orn-line"></div>
       <div class="orn-diamond-sm"></div>
@@ -495,13 +534,38 @@
   <!-- MEMOIR PAGE -->
   <div id="memoirPage" class="memoir-page">
     <div class="memoir-header">
-      <button class="btn btn-blue" style="margin-bottom:16px" onclick="toggleMemoir()">← 返回清單</button>
       <div class="memoir-orn">── ✦ ──</div>
       <div class="memoir-title">✦ 回憶錄 ✦</div>
       <div class="memoir-sub">那些我們走過的地方，吃過的美食，帶回家的寶物</div>
       <div class="memoir-orn">── ✦ ──</div>
     </div>
     <div id="memoirContainer"><div class="empty-state">回憶錄還是空的 ✦ 勾選完成的項目會出現在這裡</div></div>
+  </div>
+
+  <!-- PIGGY PAGE -->
+  <div id="piggyPage" style="display:none">
+    <div class="memoir-header">
+      <div class="memoir-orn">── 🦁 ──</div>
+      <div class="memoir-title">🦁 皮皮小金庫</div>
+      <div class="memoir-sub">零錢與紅包，一分一毫都記住</div>
+      <div class="memoir-orn">── 🦁 ──</div>
+    </div>
+
+    <div class="piggy-section">
+      <div class="piggy-section-header">
+        <span>🪙 零錢</span>
+        <button class="btn btn-sm btn-blue" onclick="openAddPiggy('coins')">＋ 新增</button>
+      </div>
+      <div id="piggyCoins"></div>
+    </div>
+
+    <div class="piggy-section" style="margin-top:24px">
+      <div class="piggy-section-header">
+        <span>🧧 紅包</span>
+        <button class="btn btn-sm btn-blue" onclick="openAddPiggy('redpackets')">＋ 新增</button>
+      </div>
+      <div id="piggyRed"></div>
+    </div>
   </div>
 
   <div class="footer-bar">
@@ -584,11 +648,12 @@ const db = getDatabase(app);
 })();
 
 // State
-let categories={}, items={}, activeTab=null, showMemoir=false;
+let categories={}, items={}, piggyData={coins:[],redpackets:[]};
+let activeTab=null, showMemoir=false, showPiggy=false;
 let editingItemId=null, currentCatId=null, dragSrcId=null;
 let selectedIcon='✨', selectedColor='gold', searchQuery='', selectedPriority='';
 
-const ICONS=['🍜','🍱','🍣','🍕','☕','🍰','🍷','🎬','🏔️','🌊','🌸','🛍️','💎','🎁','✈️','🏠','🎮','📚','🎵','💐','⭐','✨','🔮','🗺️','🕯️','🪄','🦅','📖','🌙','🏺','🎪','🌃'];
+const ICONS=['🍜','🍱','🍣','🍕','🍔','🌮','🍦','🧁','🍰','☕','🧋','🍷','🍸','🎬','🎭','🎪','🎡','🏔️','🌊','🏖️','🌸','🌺','🌻','🌈','🛍️','👜','💍','💎','🎁','🎀','✈️','🚢','🚂','🏠','🏡','🌃','🎮','🎲','🎯','📚','📖','🎵','🎸','🎹','💐','🌷','⭐','✨','🔮','🗺️','🕯️','🪄','🦅','🌙','🏺','🦁','🐯','🦊','🐼','🐨','🦄','🧸','🎋','🪷','🫧','🍡','🧇','🥐','🎑','🏯','⛩️','🌅','🌄','🎇','🧨','🪅','🎎','🎐','🗼','🗽','🎠','🎡','🎢'];
 const COLORS=['gold','blue','teal','rose','purple','green','cream'];
 const COLOR_HEX={gold:'#d4a55a',blue:'#4a7fd4',teal:'#4ab8cc',rose:'#cc5570',purple:'#8a6ac8',green:'#5ab870',cream:'#f0e6cc'};
 const DEFAULT_CATS=[{name:'想吃美食',icon:'🍜',color:'gold'},{name:'想去哪裡',icon:'🗺️',color:'teal'},{name:'待買清單',icon:'🛍️',color:'rose'}];
@@ -612,27 +677,38 @@ onValue(ref(db,'items'),snap=>{
   document.getElementById('syncText').textContent='已同步 ✦';
 });
 
-function renderAll(){renderTabs();showMemoir?renderMemoir():renderCategories();}
+onValue(ref(db,'piggy'),snap=>{
+  piggyData=snap.val()||{coins:[],redpackets:[]};
+  if(showPiggy) renderPiggy();
+});
+
+function renderAll(){
+  renderTabs();
+  if(showPiggy) renderPiggy();
+  else if(showMemoir) renderMemoir();
+  else renderCategories();
+}
 
 function sortedCats(){return Object.entries(categories).sort((a,b)=>(a[1].order||0)-(b[1].order||0));}
 
 function renderTabs(){
   const tabs=document.getElementById('navTabs');
   const cats=sortedCats();
-  let h=`<button class="nav-tab ${!showMemoir&&activeTab===null?'active':''}" onclick="setTab(null)">全部</button>`;
+  let h=`<button class="nav-tab ${!showMemoir&&!showPiggy&&activeTab===null?'active':''}" onclick="setTab(null)">全部</button>`;
   cats.forEach(([id,c])=>{
-    const a=!showMemoir&&activeTab===id?'active':'';
+    const a=!showMemoir&&!showPiggy&&activeTab===id?'active':'';
     h+=`<button class="nav-tab ${a}" onclick="setTab('${id}')">${c.icon} ${c.name}</button>`;
   });
   h+=`<button class="nav-tab nav-tab-memoir ${showMemoir?'active':''}" onclick="toggleMemoir()">📖 回憶錄</button>`;
+  h+=`<button class="nav-tab nav-tab-piggy ${showPiggy?'active':''}" onclick="togglePiggy()">🦁 皮皮小金庫</button>`;
   tabs.innerHTML=h;
 }
 
 function renderCategories(){
-  // Fix: properly show/hide pages
   document.getElementById('mainPage').style.display='block';
   document.getElementById('memoirPage').style.display='none';
   document.getElementById('memoirPage').classList.remove('active');
+  document.getElementById('piggyPage').style.display='none';
 
   const container=document.getElementById('categoriesContainer');
   const q=searchQuery.toLowerCase();
@@ -642,7 +718,11 @@ function renderCategories(){
     const ci=Object.entries(items)
       .filter(([,i])=>i.catId===id&&!i.done)
       .filter(([,i])=>!q||i.name.toLowerCase().includes(q)||(i.note||'').toLowerCase().includes(q))
-      .sort((a,b)=>(a[1].order||0)-(b[1].order||0));
+      .sort((a,b)=>{
+        if(b[1].pinned&&!a[1].pinned) return 1;
+        if(a[1].pinned&&!b[1].pinned) return -1;
+        return (a[1].order||0)-(b[1].order||0);
+      });
     const count=ci.length;
     const ih=count===0?'<div class="empty-state">這個分類還是空的</div>':ci.map(([iid,it])=>itemHtml(iid,it)).join('');
     return `<div class="category-section" data-color="${cat.color||'gold'}" data-catid="${id}">
@@ -672,7 +752,9 @@ function renderCategories(){
   });
 }
 
-const PRIORITY={urgent:{icon:'🧪',label:'緊急',color:'#cc4444'},normal:{icon:'🔵',label:'普通',color:'#4a7fd4'},low:{icon:'🟢',label:'輕鬆',color:'#5ab870'}};
+const PRIORITY={urgent:{icon:'🔴',label:'緊急',color:'#cc4444'},normal:{icon:'🔵',label:'普通',color:'#4a7fd4'},low:{icon:'🟢',label:'輕鬆',color:'#5ab870'}};
+
+const ICONS=['🍜','🍱','🍣','🍕','🍔','🌮','🍦','🧁','🍰','☕','🧋','🍷','🍸','🎬','🎭','🎪','🎡','🏔️','🌊','🏖️','🌸','🌺','🌻','🌈','🛍️','👜','💍','💎','🎁','🎀','✈️','🚢','🚂','🏠','🏡','🌃','🎮','🎲','🎯','📚','📖','🎵','🎸','🎹','💐','🌷','⭐','✨','🔮','🗺️','🕯️','🪄','🦅','📖','🌙','🏺','🎪','🎠','🦁','🐯','🦊','🐼','🐨','🦄','🧸','🎋','🪷','🫧','🍡','🧇','🥐','🎑','🏯','⛩️','🌅','🌄','🎇','🧨','🪅','🎎','🎐','🗼','🗽','🎠','🎡','🎢'];
 
 function itemHtml(iid,item){
   const isMap=item.link&&(item.link.includes('maps')||item.link.includes('goo.gl'));
@@ -683,14 +765,17 @@ function itemHtml(iid,item){
   const dh=item.date?`<span class="item-date">🗓 ${item.date}</span>`:'';
   const p=item.priority&&PRIORITY[item.priority];
   const ph=p?`<span class="item-priority" style="color:${p.color}">${p.icon} ${p.label}</span>`:'';
-  return `<div class="item" draggable="true" data-iid="${iid}">
+  const pinStyle=item.pinned?'border-color:var(--bronze-light);background:rgba(180,115,51,0.06);':'';
+  const pinIcon=item.pinned?'📌':'';
+  return `<div class="item" draggable="true" data-iid="${iid}" style="${pinStyle}">
     <span class="item-drag">⠿</span>
     <input type="checkbox" class="item-check" ${item.done?'checked':''} onchange="toggleDone('${iid}',this.checked,this)">
     <div class="item-content">
-      <div class="item-name ${item.done?'done':''}">${item.name}</div>
+      <div class="item-name ${item.done?'done':''}">${pinIcon} ${item.name}</div>
       <div class="item-meta">${ph}${nh}${dh}${lh}${ch}</div>
     </div>
     <div class="item-actions">
+      <button class="item-btn ${item.pinned?'pinned':''}" onclick="togglePin('${iid}')" title="釘選">📌</button>
       <button class="item-btn" onclick="openEditItem('${iid}')" title="編輯">✎</button>
       <button class="item-btn del" onclick="deleteItem('${iid}')" title="刪除">✕</button>
     </div>
@@ -698,10 +783,10 @@ function itemHtml(iid,item){
 }
 
 function renderMemoir(){
-  // Fix: properly show/hide pages
   document.getElementById('mainPage').style.display='none';
   document.getElementById('memoirPage').style.display='block';
   document.getElementById('memoirPage').classList.add('active');
+  document.getElementById('piggyPage').style.display='none';
 
   const done=Object.entries(items).filter(([,i])=>i.done).sort((a,b)=>(b[1].doneAt||0)-(a[1].doneAt||0));
   const container=document.getElementById('memoirContainer');
@@ -734,8 +819,63 @@ function spawnSparkles(el){
   });
 }
 
-window.setTab=id=>{activeTab=id;showMemoir=false;renderAll();};
-window.toggleMemoir=()=>{showMemoir=!showMemoir;renderAll();};
+window.setTab=id=>{activeTab=id;showMemoir=false;showPiggy=false;renderAll();};
+window.toggleMemoir=()=>{showMemoir=!showMemoir;showPiggy=false;renderAll();};
+window.togglePiggy=()=>{showPiggy=!showPiggy;showMemoir=false;if(showPiggy)activeTab=null;renderAll();};
+window.togglePin=iid=>update(ref(db,`items/${iid}`),{pinned:!items[iid]?.pinned});
+function renderPiggy(){
+  document.getElementById('mainPage').style.display='none';
+  document.getElementById('memoirPage').style.display='none';
+  document.getElementById('piggyPage').style.display='block';
+  const coins=piggyData.coins||[];
+  const reds=piggyData.redpackets||[];
+  const coinTotal=coins.reduce((s,r)=>s+(r.type==='in'?Number(r.amount):-Number(r.amount)),0);
+  const redTotal=reds.reduce((s,r)=>s+(r.type==='in'?Number(r.amount):-Number(r.amount)),0);
+  const recordHtml=(list,type)=>list.length===0
+    ?'<div class="empty-state">還沒有記錄</div>'
+    :[...list].reverse().map((r,i)=>`
+      <div class="piggy-record">
+        <span class="piggy-record-icon">${r.type==='in'?'💰':'💸'}</span>
+        <div class="piggy-record-content">
+          <span class="piggy-record-name">${r.name}</span>
+          ${r.note?`<span class="piggy-record-note">${r.note}</span>`:''}
+          ${r.date?`<span class="piggy-record-date">🗓 ${r.date}</span>`:''}
+        </div>
+        <span class="piggy-amount ${r.type==='in'?'pos':'neg'}">${r.type==='in'?'+':'-'}$${r.amount}</span>
+        <button class="item-btn del" onclick="deletePiggy('${type}',${list.length-1-i})" style="opacity:1">✕</button>
+      </div>`).join('');
+  document.getElementById('piggyCoins').innerHTML=`<div class="piggy-total">零錢結餘：<span class="${coinTotal>=0?'pos':'neg'}">$${coinTotal}</span></div>${recordHtml(coins,'coins')}`;
+  document.getElementById('piggyRed').innerHTML=`<div class="piggy-total">紅包結餘：<span class="${redTotal>=0?'pos':'neg'}">$${redTotal}</span></div>${recordHtml(reds,'redpackets')}`;
+}
+
+window.openAddPiggy=type=>{
+  document.getElementById('piggyModalType').value=type;
+  document.getElementById('piggyModalTitle').textContent=type==='coins'?'新增零錢記錄':'新增紅包記錄';
+  ['piggyName','piggyAmount','piggyNote','piggyDate'].forEach(id=>document.getElementById(id).value='');
+  document.querySelector('input[name="piggyInOut"][value="in"]').checked=true;
+  document.getElementById('piggyModal').classList.add('active');
+  setTimeout(()=>document.getElementById('piggyName').focus(),80);
+};
+window.closePiggyModal=()=>document.getElementById('piggyModal').classList.remove('active');
+window.savePiggy=()=>{
+  const name=document.getElementById('piggyName').value.trim();
+  const amount=parseFloat(document.getElementById('piggyAmount').value);
+  if(!name||isNaN(amount)||amount<=0)return;
+  const type=document.getElementById('piggyModalType').value;
+  const inOut=document.querySelector('input[name="piggyInOut"]:checked').value;
+  const record={name,amount,type:inOut,note:document.getElementById('piggyNote').value.trim(),date:document.getElementById('piggyDate').value,createdAt:Date.now()};
+  const current=[...(piggyData[type]||[])];
+  current.push(record);
+  update(ref(db,'piggy'),{[type]:current});
+  closePiggyModal();
+};
+window.deletePiggy=(type,realIdx)=>{
+  if(!confirm('確定刪除？'))return;
+  const list=[...(piggyData[type]||[])];
+  list.splice(realIdx,1);
+  update(ref(db,'piggy'),{[type]:list});
+};
+
 window.toggleCat=id=>update(ref(db,`categories/${id}`),{collapsed:!(categories[id]?.collapsed)});
 window.toggleDone=(iid,done,el)=>{
   if(done&&el) spawnSparkles(el);
