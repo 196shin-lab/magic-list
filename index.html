@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>✦ Koiyume & Shin696 ✦</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>❤️</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Noto+Serif+TC:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -696,7 +697,7 @@ const db = getDatabase(app);
 
 // State
 let categories={}, items={}, piggyData={coins:[],redpackets:[]};
-let activeTab=null;
+let activeTab=null, currentPage='wishes';
 let editingItemId=null, currentCatId=null, dragSrcId=null;
 let selectedIcon='✨', selectedColor='gold', searchQuery='', selectedPriority='';
 
@@ -730,8 +731,6 @@ onValue(ref(db,'piggy'),snap=>{
 });
 
 // currentPage: 'wishes' | 'memoir' | 'piggy'
-let currentPage='wishes';
-
 function setPage(page){
   currentPage=page;
   // Update page tab highlight
