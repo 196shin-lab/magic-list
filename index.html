@@ -151,22 +151,46 @@
     letter-spacing: 3px; font-style: italic; margin-bottom: 20px;
   }
 
-  /* ── NAV TABS ── */
+  /* ── PAGE TABS (A/B/C) ── */
+  .page-tabs {
+    display: flex; gap: 0; margin-bottom: 28px;
+    border-bottom: 2px solid var(--border);
+  }
+  .page-tab {
+    padding: 14px 32px;
+    background: transparent;
+    border: none; border-bottom: 3px solid transparent;
+    color: var(--text-dim);
+    font-family: 'Cinzel', serif; font-size: 18px;
+    letter-spacing: 3px; cursor: pointer;
+    transition: all 0.3s;
+    margin-bottom: -2px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .page-tab:hover { color: var(--bronze-bright); }
+  .page-tab.active {
+    color: var(--bronze-bright);
+    border-bottom-color: var(--bronze-bright);
+    background: linear-gradient(180deg, transparent, rgba(180,115,51,0.05));
+  }
+  .page-tab.memoir-tab.active { color: var(--purple-light); border-bottom-color: var(--purple-light); }
+  .page-tab.piggy-tab.active { color: var(--bronze-bright); border-bottom-color: var(--bronze-bright); }
+
+  /* ── CAT TABS (inside wishes page) ── */
   .nav-tabs {
     display: flex; gap: 6px; margin-bottom: 20px;
     flex-wrap: wrap;
-    border-bottom: 1px solid rgba(180,130,60,0.12);
-    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(180,130,60,0.08);
+    padding-bottom: 12px;
   }
-
   .nav-tab {
-    padding: 8px 16px;
+    padding: 7px 14px;
     background: transparent;
     border: 1px solid var(--border-blue);
     color: var(--text-dim);
-    font-family: 'Cinzel', serif; font-size: 20px;
-    letter-spacing: 2px; cursor: pointer;
-    transition: all 0.3s; text-transform: uppercase;
+    font-family: 'Cinzel', serif; font-size: 16px;
+    letter-spacing: 1px; cursor: pointer;
+    transition: all 0.3s;
     position: relative; overflow: hidden;
   }
   .nav-tab::after {
@@ -182,6 +206,22 @@
     border-color: var(--blue-light); color: var(--blue-glow);
   }
   .nav-tab.active::after { transform: scaleX(1); background: var(--blue-light); }
+
+  /* ── BACK TO TOP ── */
+  .back-to-top {
+    position: fixed; bottom: 32px; right: 32px;
+    width: 48px; height: 48px;
+    background: linear-gradient(135deg, rgba(26,58,107,0.8), rgba(10,20,45,0.9));
+    border: 1px solid var(--bronze-dim);
+    color: var(--bronze-bright);
+    font-size: 20px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    z-index: 50; opacity: 0; pointer-events: none;
+    transition: all 0.3s;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  }
+  .back-to-top.visible { opacity: 1; pointer-events: all; }
+  .back-to-top:hover { border-color: var(--bronze-bright); box-shadow: 0 0 16px rgba(180,115,51,0.3); }
   .nav-tab-memoir { margin-left: auto; border-color: rgba(138,106,200,0.2); color: rgba(138,106,200,0.45); }
   .nav-tab-memoir:hover { border-color: var(--purple-light); color: var(--purple-light); }
   .nav-tab-memoir.active { background: rgba(74,42,122,0.2); border-color: var(--purple-light); color: var(--purple-light); }
@@ -517,8 +557,15 @@
     </div>
   </div>
 
-  <!-- MAIN PAGE -->
-  <div id="mainPage">
+  <!-- PAGE TABS A/B/C -->
+  <div class="page-tabs">
+    <button class="page-tab active" id="tabA" onclick="setPage('wishes')">✦ 願望清單</button>
+    <button class="page-tab memoir-tab" id="tabB" onclick="setPage('memoir')">📖 回憶錄</button>
+    <button class="page-tab piggy-tab" id="tabC" onclick="setPage('piggy')">🦁 皮皮小金庫</button>
+  </div>
+
+  <!-- A: 願望清單 -->
+  <div id="wishesPage">
     <div class="nav-tabs" id="navTabs"></div>
     <div class="toolbar">
       <div class="search-box">
@@ -531,8 +578,8 @@
     <div id="categoriesContainer"><div class="loading">正在連接魔法資料庫…</div></div>
   </div>
 
-  <!-- MEMOIR PAGE -->
-  <div id="memoirPage" class="memoir-page">
+  <!-- B: 回憶錄 -->
+  <div id="memoirPage" style="display:none">
     <div class="memoir-header">
       <div class="memoir-orn">── ✦ ──</div>
       <div class="memoir-title">✦ 回憶錄 ✦</div>
@@ -542,7 +589,7 @@
     <div id="memoirContainer"><div class="empty-state">回憶錄還是空的 ✦ 勾選完成的項目會出現在這裡</div></div>
   </div>
 
-  <!-- PIGGY PAGE -->
+  <!-- C: 皮皮小金庫 -->
   <div id="piggyPage" style="display:none">
     <div class="memoir-header">
       <div class="memoir-orn">── 🦁 ──</div>
@@ -550,7 +597,6 @@
       <div class="memoir-sub">零錢與紅包，一分一毫都記住</div>
       <div class="memoir-orn">── 🦁 ──</div>
     </div>
-
     <div class="piggy-section">
       <div class="piggy-section-header">
         <span>🪙 零錢</span>
@@ -558,7 +604,6 @@
       </div>
       <div id="piggyCoins"></div>
     </div>
-
     <div class="piggy-section" style="margin-top:24px">
       <div class="piggy-section-header">
         <span>🧧 紅包</span>
@@ -567,6 +612,8 @@
       <div id="piggyRed"></div>
     </div>
   </div>
+
+  <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">⬆</button>
 
   <div class="footer-bar">
     <div class="sync-status">
@@ -589,7 +636,7 @@
       <label>優先度</label>
       <div class="priority-picker" id="priorityPicker">
         <div class="priority-opt" data-val="" onclick="selectPriority('')">— 不設定</div>
-        <div class="priority-opt urgent" data-val="urgent" onclick="selectPriority('urgent')">🧪 緊急</div>
+        <div class="priority-opt urgent" data-val="urgent" onclick="selectPriority('urgent')">🔴 緊急</div>
         <div class="priority-opt normal" data-val="normal" onclick="selectPriority('normal')">🔵 普通</div>
         <div class="priority-opt low" data-val="low" onclick="selectPriority('low')">🟢 輕鬆</div>
       </div>
@@ -649,7 +696,7 @@ const db = getDatabase(app);
 
 // State
 let categories={}, items={}, piggyData={coins:[],redpackets:[]};
-let activeTab=null, showMemoir=false, showPiggy=false;
+let activeTab=null;
 let editingItemId=null, currentCatId=null, dragSrcId=null;
 let selectedIcon='✨', selectedColor='gold', searchQuery='', selectedPriority='';
 
@@ -679,36 +726,48 @@ onValue(ref(db,'items'),snap=>{
 
 onValue(ref(db,'piggy'),snap=>{
   piggyData=snap.val()||{coins:[],redpackets:[]};
-  if(showPiggy) renderPiggy();
+  if(currentPage==='piggy') renderPiggy();
 });
 
+// currentPage: 'wishes' | 'memoir' | 'piggy'
+let currentPage='wishes';
+
+function setPage(page){
+  currentPage=page;
+  // Update page tab highlight
+  ['wishes','memoir','piggy'].forEach(p=>{
+    const map={wishes:'tabA',memoir:'tabB',piggy:'tabC'};
+    document.getElementById(map[p])?.classList.toggle('active',p===page);
+  });
+  // Show/hide pages
+  document.getElementById('wishesPage').style.display=page==='wishes'?'block':'none';
+  document.getElementById('memoirPage').style.display=page==='memoir'?'block':'none';
+  document.getElementById('piggyPage').style.display=page==='piggy'?'block':'none';
+  if(page==='wishes') renderCategories();
+  if(page==='memoir') renderMemoir();
+  if(page==='piggy') renderPiggy();
+}
+
 function renderAll(){
-  renderTabs();
-  if(showPiggy) renderPiggy();
-  else if(showMemoir) renderMemoir();
-  else renderCategories();
+  setPage(currentPage);
 }
 
 function sortedCats(){return Object.entries(categories).sort((a,b)=>(a[1].order||0)-(b[1].order||0));}
 
 function renderTabs(){
   const tabs=document.getElementById('navTabs');
+  if(!tabs) return;
   const cats=sortedCats();
-  let h=`<button class="nav-tab ${!showMemoir&&!showPiggy&&activeTab===null?'active':''}" onclick="setTab(null)">全部</button>`;
-  cats.forEach(([id,c])=>{
-    const a=!showMemoir&&!showPiggy&&activeTab===id?'active':'';
-    h+=`<button class="nav-tab ${a}" onclick="setTab('${id}')">${c.icon} ${c.name}</button>`;
+  let h=`<button class="nav-tab ${activeTab===null?'active':''}" onclick="setTab(null)">全部</button>`;
+  cats.forEach(([id,cat])=>{
+    const a=activeTab===id?'active':'';
+    h+=`<button class="nav-tab ${a}" onclick="setTab('${id}')">${cat.icon} ${cat.name}</button>`;
   });
-  h+=`<button class="nav-tab nav-tab-memoir ${showMemoir?'active':''}" onclick="toggleMemoir()">📖 回憶錄</button>`;
-  h+=`<button class="nav-tab nav-tab-piggy ${showPiggy?'active':''}" onclick="togglePiggy()">🦁 皮皮小金庫</button>`;
   tabs.innerHTML=h;
 }
 
 function renderCategories(){
-  document.getElementById('mainPage').style.display='block';
-  document.getElementById('memoirPage').style.display='none';
-  document.getElementById('memoirPage').classList.remove('active');
-  document.getElementById('piggyPage').style.display='none';
+  renderTabs();
 
   const container=document.getElementById('categoriesContainer');
   const q=searchQuery.toLowerCase();
@@ -782,10 +841,6 @@ function itemHtml(iid,item){
 }
 
 function renderMemoir(){
-  document.getElementById('mainPage').style.display='none';
-  document.getElementById('memoirPage').style.display='block';
-  document.getElementById('memoirPage').classList.add('active');
-  document.getElementById('piggyPage').style.display='none';
 
   const done=Object.entries(items).filter(([,i])=>i.done).sort((a,b)=>(b[1].doneAt||0)-(a[1].doneAt||0));
   const container=document.getElementById('memoirContainer');
@@ -818,14 +873,9 @@ function spawnSparkles(el){
   });
 }
 
-window.setTab=id=>{activeTab=id;showMemoir=false;showPiggy=false;renderAll();};
-window.toggleMemoir=()=>{showMemoir=!showMemoir;showPiggy=false;renderAll();};
-window.togglePiggy=()=>{showPiggy=!showPiggy;showMemoir=false;if(showPiggy)activeTab=null;renderAll();};
+window.setTab=id=>{activeTab=id;setPage('wishes');};
 window.togglePin=iid=>update(ref(db,`items/${iid}`),{pinned:!items[iid]?.pinned});
 function renderPiggy(){
-  document.getElementById('mainPage').style.display='none';
-  document.getElementById('memoirPage').style.display='none';
-  document.getElementById('piggyPage').style.display='block';
   const coins=piggyData.coins||[];
   const reds=piggyData.redpackets||[];
   const coinTotal=coins.reduce((s,r)=>s+(r.type==='in'?Number(r.amount):-Number(r.amount)),0);
@@ -943,7 +993,7 @@ window.saveCategory=()=>{
   closeCatModal();
 };
 
-document.getElementById('searchInput').addEventListener('input',e=>{searchQuery=e.target.value;if(!showMemoir)renderCategories();});
+document.getElementById('searchInput').addEventListener('input',e=>{searchQuery=e.target.value;if(currentPage==='wishes')renderCategories();});
 
 window.exportExcel=()=>{
   const rows=[['分類','名稱','備註','連結','日曆連結','完成']];
@@ -957,6 +1007,15 @@ document.getElementById('itemName').addEventListener('keydown',e=>{if(e.key==='E
 document.getElementById('catName').addEventListener('keydown',e=>{if(e.key==='Enter')saveCategory();});
 document.getElementById('itemModal').addEventListener('click',e=>{if(e.target===e.currentTarget)closeItemModal();});
 document.getElementById('catModal').addEventListener('click',e=>{if(e.target===e.currentTarget)closeCatModal();});
+
+// Back to top
+window.addEventListener('scroll',()=>{
+  const btn=document.getElementById('backToTop');
+  if(btn) btn.classList.toggle('visible', window.scrollY>300);
+});
+
+// Init page
+setPage('wishes');
 </script>
 </body>
 </html>
